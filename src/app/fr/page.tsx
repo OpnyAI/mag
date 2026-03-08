@@ -3,13 +3,13 @@ import { HomePage } from "@/components/home/HomePage";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  locale: "de",
-  title: "MAG - Metallkompetenz für Automotive und Industrie",
+  locale: "fr",
+  title: "MAG - Expertise Metallique Industrielle",
   description:
-    "Familiengeführter B2B-Partner für Guss, Schweißbaugruppen, Fahrzeugsysteme, CNC-Bearbeitung und integrierte Supply Chains.",
+    "Fournisseur B2B familial pour fonderie, assemblages soudes, structures vehicules, usinage CNC et supply chain integree.",
   path: "/",
 });
 
 export default function Page() {
-  return <HomePage locale="de" />;
+  return <HomePage locale="fr" />;
 }
