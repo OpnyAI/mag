@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "de",
-  title: "MAG - Metallkompetenz für Automotive und Industrie",
+  title: "MAG - Industrieller Metallguss, Engineering und Metalllösungen",
   description:
-    "Familiengeführter B2B-Partner für Guss, Schweißbaugruppen, Fahrzeugsysteme, CNC-Bearbeitung und integrierte Supply Chains.",
+    "Deutsches Industrieunternehmen für Gießereitechnologien, Metallverarbeitung, Engineering und integrierte Supply-Chain-Lösungen.",
   path: "/",
 });
 

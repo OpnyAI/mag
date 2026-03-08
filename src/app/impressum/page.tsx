@@ -20,7 +20,7 @@ export default function Page() {
         <div className="mt-6 space-y-6 text-sm leading-relaxed text-[var(--color-muted)]">
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">Angaben gemaess 5 TMG (Platzhalter)</h2>
-            <p>MAG - Metal Advanced Group</p>
+            <p>MAG - Metal Advancement Group</p>
             <p>Musterstrasse 1, 72760 Reutlingen, Deutschland</p>
             <p>Vertretungsberechtigte Person: Wird durch den Kunden final ergaenzt</p>
           </section>

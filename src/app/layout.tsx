@@ -6,14 +6,20 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MAG - Metal Advanced Group",
-    template: "%s | MAG - Metal Advanced Group",
+    default: "MAG - Metal Advancement Group",
+    template: "%s | MAG - Metal Advancement Group",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   description:
-    "MAG ist Ihr B2B-Partner für Guss, Schweißbaugruppen, Fahrzeugsysteme, CNC-Bearbeitung und integrierte Lieferketten.",
+    "MAG ist ein deutsches Industrieunternehmen für Gießereitechnologien, Metallverarbeitung, Engineering und Supply-Chain-Integration.",
   openGraph: {
     type: "website",
-    siteName: "MAG - Metal Advanced Group",
+    siteName: "MAG - Metal Advancement Group",
   },
 };
 

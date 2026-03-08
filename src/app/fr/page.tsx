@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "fr",
-  title: "MAG - Expertise Metallique Industrielle",
+  title: "MAG - Fonderie industrielle, ingénierie et solutions métalliques",
   description:
-    "Fournisseur B2B familial pour fonderie, assemblages soudes, structures vehicules, usinage CNC et supply chain integree.",
+    "Entreprise industrielle allemande combinant fonderie, fabrication métallique, ingénierie et intégration de la chaîne logistique.",
   path: "/",
 });
 

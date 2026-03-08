@@ -19,15 +19,15 @@ export function ContactPage({ locale }: ContactPageProps) {
 
   return (
     <PageFrame locale={locale}>
-      <section className="mx-auto w-full max-w-4xl px-5 pb-16 pt-12 lg:px-8 lg:pt-16">
+      <section className="surface-dark mx-auto w-full max-w-4xl px-5 pb-16 pt-12 lg:px-8 lg:pt-16">
         <h1 className="text-4xl font-semibold tracking-tight">
           {content.contact.title}
         </h1>
-        <p className="mt-4 text-[var(--color-muted)]">
+        <p className="section-muted mt-4">
           {content.contact.subtitle}
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="surface-light mt-10 grid gap-4 sm:grid-cols-2">
           <a
             href={`mailto:${email}`}
             className="border border-[var(--color-border)] bg-white p-5 transition hover:border-[var(--color-accent)]"
@@ -49,7 +49,7 @@ export function ContactPage({ locale }: ContactPageProps) {
           </a>
         </div>
 
-        <div className="mt-8 border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <div className="surface-light mt-8 border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
           <p className="text-sm text-[var(--color-muted)]">
             {content.contact.openingHours}
           </p>

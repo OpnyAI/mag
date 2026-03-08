@@ -4,8 +4,8 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "en",
-  title: "Company",
-  description: "MAG company profile, values, figures and industrial background.",
+  title: "About MAG",
+  description: "Company profile, core industrial capabilities, materials and industries served by MAG.",
   path: "/company",
 });
 

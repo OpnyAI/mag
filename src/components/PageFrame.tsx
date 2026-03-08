@@ -9,7 +9,7 @@ interface PageFrameProps extends PropsWithChildren {
 
 export function PageFrame({ locale, children }: PageFrameProps) {
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-on-dark)]">
       <SiteHeader locale={locale} />
       <main>{children}</main>
       <SiteFooter locale={locale} />

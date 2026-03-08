@@ -7,14 +7,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const basePages = [
     "/",
     "/company",
+    "/services",
     "/contact",
     "/impressum",
     "/datenschutz",
     "/en",
     "/en/company",
+    "/en/services",
     "/en/contact",
     "/fr",
     "/fr/company",
+    "/fr/services",
     "/fr/contact",
   ];
 

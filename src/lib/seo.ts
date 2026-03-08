@@ -47,7 +47,7 @@ export function buildPageMetadata({
       title,
       description,
       url: absoluteUrl(canonicalPath),
-      siteName: "MAG - Metal Advanced Group",
+      siteName: "MAG - Metal Advancement Group",
       images: [
         {
           url: absoluteUrl(imagePath),

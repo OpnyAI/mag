@@ -23,16 +23,16 @@ export function CompanyPage({ locale }: CompanyPageProps) {
 
   return (
     <PageFrame locale={locale}>
-      <section className="mx-auto w-full max-w-7xl px-5 pb-14 pt-12 lg:px-8 lg:pb-16 lg:pt-20">
+      <section className="surface-dark mx-auto w-full max-w-7xl px-5 pb-14 pt-12 lg:px-8 lg:pb-16 lg:pt-20">
         <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight lg:text-5xl">
           {content.company.title}
         </h1>
-        <p className="mt-5 max-w-[70ch] text-base leading-relaxed text-[var(--color-muted)]">
+        <p className="section-muted mt-5 max-w-[70ch] text-base leading-relaxed">
           {content.company.intro}
         </p>
       </section>
 
-      <section className="border-y border-[var(--color-border)] bg-white">
+      <section className="surface-light border-y border-[var(--color-border)] bg-white">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-5 py-14 md:grid-cols-2 md:items-center lg:px-8 lg:py-16">
           <div>
             <h2 className="text-2xl font-semibold lg:text-3xl">
@@ -62,7 +62,7 @@ export function CompanyPage({ locale }: CompanyPageProps) {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
+      <section className="surface-dark mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
         <h2 className="text-2xl font-semibold lg:text-3xl">
           {content.company.factsTitle}
         </h2>
@@ -83,7 +83,7 @@ export function CompanyPage({ locale }: CompanyPageProps) {
         </div>
       </section>
 
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-panel)]">
+      <section className="surface-light border-t border-[var(--color-border)] bg-[var(--color-panel)]">
         <div className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
           <h2 className="text-2xl font-semibold lg:text-3xl">
             {content.company.locationsTitle}

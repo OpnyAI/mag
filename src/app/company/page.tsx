@@ -4,8 +4,8 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "de",
-  title: "Unternehmen",
-  description: "MAG - Werte, Kennzahlen und industrielle Herkunft im deutschen Mittelstand.",
+  title: "Über MAG",
+  description: "Unternehmensprofil, Leistungsbereiche, Werkstoffe und Branchenfokus von MAG.",
   path: "/company",
 });
 

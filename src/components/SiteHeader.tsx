@@ -55,7 +55,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       { label: content.nav.company, href: localizePath(locale, "/company") },
       {
         label: content.nav.services,
-        href: localizePath(locale, "/services/casting-materials"),
+        href: localizePath(locale, "/services"),
       },
       {
         label: content.nav.quality,
@@ -112,7 +112,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:rgba(10,19,31,0.1)] bg-[color:rgba(248,249,251,0.9)] backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-[color:rgba(138,150,158,0.28)] bg-[color:rgba(24,28,32,0.92)] backdrop-blur-sm">
       <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
         <div className="hidden h-20 grid-cols-[auto_1fr_auto] items-center gap-8 lg:grid">
           <Link
@@ -128,12 +128,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               sizes="132px"
               priority
             />
-            <div className="max-w-[12rem] border-l border-[var(--color-border)] pl-3">
-              <p className="text-xs font-semibold tracking-[0.18em] text-[var(--color-text)]">
+            <div className="max-w-[12rem] border-l border-[color:rgba(231,235,238,0.25)] pl-3">
+              <p className="text-xs font-semibold tracking-[0.18em] text-[var(--color-on-dark)]">
                 MAG
               </p>
-              <p className="text-xs text-[var(--color-muted)]">
-                Metal Advanced Group
+              <p className="text-xs text-[color:rgba(231,235,238,0.72)]">
+                Metal Advancement Group
               </p>
             </div>
           </Link>
@@ -145,7 +145,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-sm text-[var(--color-text)] transition-colors hover:text-[var(--color-accent)]"
+                    className="text-sm text-[color:rgba(231,235,238,0.9)] transition-colors hover:text-[var(--color-accent)]"
                   >
                     {item.label}
                   </Link>
@@ -166,36 +166,44 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     }
                   }}
                 >
-                  <button
-                    type="button"
-                    className="inline-flex items-center gap-1 text-sm text-[var(--color-text)] transition-colors hover:text-[var(--color-accent)]"
-                    aria-haspopup="menu"
-                    aria-expanded={servicesOpen}
-                    onClick={() =>
-                      setServicesOpen((currentState) => !currentState)
-                    }
-                  >
-                    {item.label}
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      aria-hidden="true"
-                      className={`transition-transform ${
-                        servicesOpen ? "rotate-180" : ""
-                      }`}
+                  <div className="inline-flex items-center gap-1">
+                    <Link
+                      href={item.href}
+                      className="text-sm text-[color:rgba(231,235,238,0.9)] transition-colors hover:text-[var(--color-accent)]"
                     >
-                      <path
-                        d="M2.2 4.5L6 8.3l3.8-3.8"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                      />
-                    </svg>
-                  </button>
+                      {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      className="inline-flex items-center text-sm text-[color:rgba(231,235,238,0.9)] transition-colors hover:text-[var(--color-accent)]"
+                      aria-label={`${item.label} menu`}
+                      aria-haspopup="menu"
+                      aria-expanded={servicesOpen}
+                      onClick={() =>
+                        setServicesOpen((currentState) => !currentState)
+                      }
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        aria-hidden="true"
+                        className={`transition-transform ${
+                          servicesOpen ? "rotate-180" : ""
+                        }`}
+                      >
+                        <path
+                          d="M2.2 4.5L6 8.3l3.8-3.8"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                        />
+                      </svg>
+                    </button>
+                  </div>
 
                   <div
-                    className={`absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border border-[var(--color-border)] bg-white p-2 shadow-sm transition ${
+                    className={`absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border border-[color:rgba(138,150,158,0.28)] bg-[var(--color-surface)] p-2 shadow-[0_14px_36px_rgba(0,0,0,0.3)] transition ${
                       servicesOpen
                         ? "pointer-events-auto mt-2 opacity-100"
                         : "pointer-events-none mt-1 opacity-0"
@@ -208,7 +216,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                       <Link
                         key={service.slug}
                         href={servicePath(locale, service.slug)}
-                        className="block px-3 py-2 text-sm text-[var(--color-text)] hover:bg-[var(--color-panel)]"
+                        className="block px-3 py-2 text-sm text-[var(--color-on-dark)] hover:bg-[color:rgba(231,235,238,0.08)] hover:text-[var(--color-accent)]"
                         onClick={closeServicesMenuNow}
                       >
                         {service.title[locale]}
@@ -220,7 +228,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             })}
           </nav>
 
-          <div className="flex items-center justify-end gap-3 border-l border-[var(--color-border)] pl-6">
+          <div className="flex items-center justify-end gap-3 border-l border-[color:rgba(231,235,238,0.2)] pl-6">
             {(["de", "en", "fr"] as Locale[]).map((targetLocale) => {
               const isActive = targetLocale === locale;
               return (
@@ -230,7 +238,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   className={`text-xs font-semibold tracking-[0.12em] ${
                     isActive
                       ? "text-[var(--color-accent)]"
-                      : "text-[var(--color-muted)] hover:text-[var(--color-text)]"
+                      : "text-[color:rgba(231,235,238,0.7)] hover:text-[var(--color-on-dark)]"
                   }`}
                 >
                   {targetLocale.toUpperCase()}
@@ -254,19 +262,19 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               sizes="112px"
               priority
             />
-            <div className="min-w-0 border-l border-[var(--color-border)] pl-3">
-              <p className="truncate text-xs font-semibold tracking-[0.16em] text-[var(--color-text)]">
+            <div className="min-w-0 border-l border-[color:rgba(231,235,238,0.25)] pl-3">
+              <p className="truncate text-xs font-semibold tracking-[0.16em] text-[var(--color-on-dark)]">
                 MAG
               </p>
-              <p className="hidden truncate text-[11px] text-[var(--color-muted)] min-[380px]:block">
-                Metal Advanced Group
+              <p className="hidden truncate text-[11px] text-[color:rgba(231,235,238,0.72)] min-[380px]:block">
+                Metal Advancement Group
               </p>
             </div>
           </Link>
 
           <button
             type="button"
-            className="border border-[var(--color-border)] px-3 py-2 text-sm text-[var(--color-text)]"
+            className="border border-[color:rgba(231,235,238,0.4)] px-3 py-2 text-sm text-[var(--color-on-dark)]"
             onClick={() => {
               setMobileOpen((value) => {
                 const next = !value;
@@ -288,7 +296,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       {mobileOpen ? (
         <div
           id="mobile-main-menu"
-          className="border-t border-[var(--color-border)] bg-white px-5 py-4 lg:hidden"
+          className="border-t border-[color:rgba(138,150,158,0.28)] bg-[var(--color-surface)] px-5 py-4 lg:hidden"
         >
           <div className="space-y-1">
             {navItems.map((item, index) => {
@@ -297,7 +305,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block py-2 text-sm text-[var(--color-text)]"
+                    className="block py-2 text-sm text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
                     onClick={() => {
                       setMobileOpen(false);
                       setMobileServicesOpen(false);
@@ -310,33 +318,45 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
               return (
                 <div key={item.href}>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between py-2 text-left text-sm text-[var(--color-text)]"
-                    aria-expanded={mobileServicesOpen}
-                    aria-controls="mobile-services-submenu"
-                    onClick={() =>
-                      setMobileServicesOpen((currentState) => !currentState)
-                    }
-                  >
-                    <span>{item.label}</span>
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      aria-hidden="true"
-                      className={`transition-transform ${
-                        mobileServicesOpen ? "rotate-180" : ""
-                      }`}
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={item.href}
+                      className="block py-2 text-sm text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setMobileServicesOpen(false);
+                      }}
                     >
-                      <path
-                        d="M2.2 4.5L6 8.3l3.8-3.8"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                      />
-                    </svg>
-                  </button>
+                      {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      className="inline-flex items-center py-2 text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
+                      aria-label={`${item.label} submenu`}
+                      aria-expanded={mobileServicesOpen}
+                      aria-controls="mobile-services-submenu"
+                      onClick={() =>
+                        setMobileServicesOpen((currentState) => !currentState)
+                      }
+                    >
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        aria-hidden="true"
+                        className={`transition-transform ${
+                          mobileServicesOpen ? "rotate-180" : ""
+                        }`}
+                      >
+                        <path
+                          d="M2.2 4.5L6 8.3l3.8-3.8"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                        />
+                      </svg>
+                    </button>
+                  </div>
 
                   <div
                     id="mobile-services-submenu"
@@ -349,7 +369,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         <Link
                           key={service.slug}
                           href={servicePath(locale, service.slug)}
-                          className="block py-2 text-sm text-[var(--color-muted)]"
+                          className="block py-2 text-sm text-[color:rgba(231,235,238,0.74)] hover:text-[var(--color-accent)]"
                           onClick={() => {
                             setMobileOpen(false);
                             setMobileServicesOpen(false);
@@ -365,7 +385,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             })}
           </div>
 
-          <div className="mt-4 flex items-center gap-3 border-t border-[var(--color-border)] pt-4">
+          <div className="mt-4 flex items-center gap-3 border-t border-[color:rgba(138,150,158,0.28)] pt-4">
             {(["de", "en", "fr"] as Locale[]).map((targetLocale) => (
               <Link
                 key={targetLocale}
@@ -373,7 +393,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 className={`text-xs font-semibold tracking-[0.12em] ${
                   targetLocale === locale
                     ? "text-[var(--color-accent)]"
-                    : "text-[var(--color-muted)]"
+                    : "text-[color:rgba(231,235,238,0.72)]"
                 }`}
                 onClick={() => {
                   setMobileOpen(false);

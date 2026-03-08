@@ -85,7 +85,7 @@ export function HomePage({ locale }: HomePageProps) {
             <h1 className="mt-4 max-w-[20ch] text-[clamp(34px,8vw,44px)] font-bold leading-[1.1] tracking-tight sm:max-w-[15ch] md:text-[clamp(42px,5vw,64px)]">
               {content.heroTitle}
             </h1>
-            <p className="mt-6 max-w-[520px] text-[18px] leading-relaxed text-white/90">
+            <p className="mt-6 max-w-[680px] text-[18px] leading-relaxed text-white/90">
               {content.heroSubtitle}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-4">
@@ -106,7 +106,7 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className="border-y border-[var(--color-border)] bg-white">
+      <section className="surface-light border-y border-[var(--color-border)] bg-white">
         <div className="mx-auto grid w-full max-w-7xl gap-5 px-5 py-7 sm:grid-cols-3 lg:px-8">
           {content.stats.map((stat) => (
             <div
@@ -124,11 +124,11 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+      <section className="surface-dark mx-auto w-full max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <h2 className="max-w-[28ch] text-3xl font-semibold tracking-tight lg:text-4xl">
           {content.homeIntroTitle}
         </h2>
-        <p className="mt-4 max-w-[66ch] text-base leading-relaxed text-[var(--color-muted)]">
+        <p className="section-muted mt-4 max-w-[66ch] text-base leading-relaxed">
           {content.homeIntroText}
         </p>
 
@@ -137,7 +137,7 @@ export function HomePage({ locale }: HomePageProps) {
             <Link
               key={service.slug}
               href={servicePath(locale, service.slug)}
-              className="group flex h-full flex-col border border-[var(--color-border)] bg-white p-6 transition hover:border-[var(--color-accent)] hover:shadow-[0_10px_30px_rgba(10,19,31,0.06)]"
+              className="group flex h-full flex-col border border-[var(--color-border)] bg-white p-6 transition hover:border-[var(--color-accent)] hover:shadow-[0_10px_30px_rgba(24,28,32,0.12)]"
             >
               <p className="text-lg font-semibold leading-tight text-[var(--color-text)]">
                 {service.title[locale]}
@@ -153,7 +153,7 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className="border-y border-[var(--color-border)] bg-[var(--color-panel)]">
+      <section className="surface-light border-y border-[var(--color-border)] bg-[var(--color-panel)]">
         <div className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
           <h2 className="text-2xl font-semibold lg:text-3xl">{content.nav.quality}</h2>
           <p className="mt-3 max-w-[72ch] text-base leading-relaxed text-[var(--color-muted)]">
@@ -168,12 +168,12 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-8 px-5 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-20">
+      <section className="surface-dark mx-auto grid w-full max-w-7xl gap-8 px-5 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-20">
         <div>
           <h2 className="max-w-[20ch] text-3xl font-semibold tracking-tight lg:text-4xl">
             {content.nav.company}
           </h2>
-          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-[var(--color-muted)]">
+          <p className="section-muted mt-4 max-w-[62ch] text-base leading-relaxed">
             {content.company.intro}
           </p>
           <Link
@@ -195,7 +195,7 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className="border-y border-[var(--color-border)] bg-white">
+      <section className="surface-light border-y border-[var(--color-border)] bg-white">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-5 py-12 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8 lg:py-14">
           <div>
             <h2 className="max-w-[24ch] text-2xl font-semibold tracking-tight lg:text-3xl">
