@@ -20,8 +20,8 @@ export default function Page() {
         <div className="mt-6 space-y-6 text-sm leading-relaxed text-[var(--color-muted)]">
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">1. Verantwortliche Stelle (Platzhalter)</h2>
-            <p>MAG - Metal Advancement Group, Musterstrasse 1, 72760 Reutlingen, Deutschland</p>
-            <p>E-Mail: info@mag-group.example</p>
+            <p>MAG - Metal Advancement Group, Tränkestraße 1, 70597 Stuttgart</p>
+            <p>E-Mail: info@mag-group.eu</p>
           </section>
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">2. Verarbeitete Daten</h2>

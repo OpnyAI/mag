@@ -1,8 +1,8 @@
 import { Locale, LocaleContent, ServiceItem, ServiceSlug } from "@/lib/types";
 
-export const email = "info@mag-group.example";
-export const phone = "+49 7121 555 000";
-export const companyAddress = "Musterstraße 1, 72760 Reutlingen, Deutschland";
+export const email = "info@mag-group.eu";
+export const phone = "+49 176 741 88 448";
+export const companyAddress = "Tränkestraße 1, 70597 Stuttgart";
 
 export const localeBasePath: Record<Locale, string> = {
   de: "",
@@ -101,7 +101,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "vehicle-systems",
-    image: "/images/services/service-3.jpg",
+    image: "/images/services/fahrzeugbau/WA0034.jpg",
     title: {
       de: "Fahrzeugbau / MAG Vehicle Systems",
       en: "Vehicle Structures / MAG Vehicle Systems",
@@ -145,7 +145,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "cnc-machining",
-    image: "/images/services/service-4.jpg",
+    image: "/images/services/cnc/DSC_0376.JPG",
     title: {
       de: "CNC-Präzisionsfertigung & Oberflächen",
       en: "CNC Precision Machining & Surface Treatment",
@@ -189,7 +189,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "engineering-simulation",
-    image: "/images/services/service-5.jpg",
+    image: "/images/services/engineering/engineering_1.jpeg",
     title: {
       de: "Engineering, Simulation & Co-Engineering",
       en: "Engineering, Simulation & Co-Engineering",
@@ -233,7 +233,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "logistics-supply-chain",
-    image: "/images/services/service-6.jpg",
+    image: "/images/services/logistics/logistics_1.jpeg",
     title: {
       de: "Logistik & Supply Chain",
       en: "Logistics & Supply Chain",
@@ -277,7 +277,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "quality-certifications",
-    image: "/images/services/service-7.jpg",
+    image: "/images/services/certificates/IMG_2154.jpg",
     title: {
       de: "Qualitätssicherung & Zertifizierungen",
       en: "Quality Assurance & Certifications",
@@ -524,11 +524,21 @@ export const serviceOrder: ServiceSlug[] = services.map((service) => service.slu
 export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
   "casting-materials": ["sandguss", "shellguss", "schmiedteile"],
   "weldments-steel-structures": ["schweisskonstr"],
-  "vehicle-systems": [],
-  "cnc-machining": [],
+  "vehicle-systems": ["fahrzeugbau"],
+  "cnc-machining": ["cnc"],
   "engineering-simulation": [],
   "logistics-supply-chain": [],
-  "quality-certifications": [],
+  "quality-certifications": ["certificates"],
+};
+
+export const serviceGalleryVariant: Record<ServiceSlug, "projects" | "certificates"> = {
+  "casting-materials": "projects",
+  "weldments-steel-structures": "projects",
+  "vehicle-systems": "projects",
+  "cnc-machining": "projects",
+  "engineering-simulation": "projects",
+  "logistics-supply-chain": "projects",
+  "quality-certifications": "certificates",
 };
 
 export function getServiceBySlug(slug: string): ServiceItem | undefined {

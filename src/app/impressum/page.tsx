@@ -21,13 +21,13 @@ export default function Page() {
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">Angaben gemaess 5 TMG (Platzhalter)</h2>
             <p>MAG - Metal Advancement Group</p>
-            <p>Musterstrasse 1, 72760 Reutlingen, Deutschland</p>
+            <p>Tränkestraße 1, 70597 Stuttgart</p>
             <p>Vertretungsberechtigte Person: Wird durch den Kunden final ergaenzt</p>
           </section>
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">Kontakt</h2>
-            <p>E-Mail: info@mag-group.example</p>
-            <p>Telefon: +49 7121 555 000</p>
+            <p>E-Mail: info@mag-group.eu</p>
+            <p>Telefon: +49 176 741 88 448</p>
           </section>
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">Haftungshinweis</h2>

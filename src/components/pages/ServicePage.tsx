@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { PageFrame } from "@/components/PageFrame";
+import { ServiceMediaGallery } from "@/components/services/ServiceMediaGallery";
 import {
   contentByLocale,
   getServiceBySlug,
   localizePath,
   serviceGalleryFolders,
+  serviceGalleryVariant,
 } from "@/lib/site-content";
 import { Locale, ServiceSlug } from "@/lib/types";
 
@@ -25,7 +27,7 @@ function getGalleryImages(slug: ServiceSlug): string[] {
 
   const allowedExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
-  return folderNames.flatMap((folderName) => {
+  const imagePaths = folderNames.flatMap((folderName) => {
     const absoluteFolder = path.join(
       process.cwd(),
       "public",
@@ -46,6 +48,8 @@ function getGalleryImages(slug: ServiceSlug): string[] {
 
     return fileNames.map((fileName) => `/images/services/${folderName}/${fileName}`);
   });
+
+  return [...new Set(imagePaths)];
 }
 
 export function ServicePage({ locale, slug }: ServicePageProps) {
@@ -84,18 +88,20 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
         ? "We support your project from concept development and engineering to serial production and logistics."
         : "Nous accompagnons votre projet de la conception et de l'ingénierie jusqu'à la production série et la logistique.";
 
-  const galleryTitle =
-    locale === "de"
-      ? "Projektbeispiele"
-      : locale === "en"
-        ? "Project Examples"
-        : "Exemples de projets";
-
   const galleryImages = getGalleryImages(service.slug);
+  const galleryVariant = serviceGalleryVariant[service.slug];
+  const isLogisticsService = service.slug === "logistics-supply-chain";
+  const heroImageClass =
+    service.slug === "quality-certifications"
+      ? "h-full w-full bg-white object-contain"
+      : "h-full w-full object-cover";
+  const heroSectionClass = isLogisticsService
+    ? "surface-dark mx-auto grid w-full max-w-7xl gap-8 px-5 pb-14 pt-12 lg:grid-cols-[42%_58%] lg:items-center lg:px-8"
+    : "surface-dark mx-auto grid w-full max-w-7xl gap-8 px-5 pb-14 pt-12 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:px-8";
 
   return (
     <PageFrame locale={locale}>
-      <section className="surface-dark mx-auto grid w-full max-w-7xl gap-8 px-5 pb-14 pt-12 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:px-8">
+      <section className={heroSectionClass}>
         <div>
           <p className="text-xs font-semibold tracking-[0.2em] text-[var(--color-accent)]">
             {content.nav.services.toUpperCase()}
@@ -108,16 +114,31 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
           </p>
         </div>
 
-        <div className="overflow-hidden border border-[var(--color-border)]">
-          <Image
-            src={service.image}
-            alt={service.title[locale]}
-            width={1400}
-            height={900}
-            className="h-full w-full object-cover"
-            sizes="(max-width: 1024px) 100vw, 45vw"
-          />
-        </div>
+        {isLogisticsService ? (
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[420px] aspect-[4/3] overflow-hidden border border-white/10">
+              <Image
+                src="/images/services/logistics/logistics_1.jpeg"
+                alt="Logistics and supply chain coordination"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="overflow-hidden border border-[var(--color-border)]">
+            <Image
+              src={service.image}
+              alt={service.title[locale]}
+              width={1400}
+              height={900}
+              className={heroImageClass}
+              sizes="(max-width: 1024px) 100vw, 45vw"
+            />
+          </div>
+        )}
       </section>
 
       <section className="surface-light border-y border-[var(--color-border)] bg-white">
@@ -152,30 +173,12 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
         </div>
       </section>
 
-      {galleryImages.length > 0 ? (
-        <section className="surface-light border-y border-[var(--color-border)] bg-white">
-          <div className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8">
-            <h2 className="text-2xl font-semibold text-[var(--color-text)]">{galleryTitle}</h2>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {galleryImages.map((imagePath, index) => (
-                <div
-                  key={imagePath}
-                  className="overflow-hidden border border-[var(--color-border)] bg-[var(--color-panel)]"
-                >
-                  <Image
-                    src={imagePath}
-                    alt={`${service.title[locale]} ${index + 1}`}
-                    width={1400}
-                    height={1000}
-                    className="aspect-[4/3] w-full object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
+      <ServiceMediaGallery
+        locale={locale}
+        serviceTitle={service.title[locale]}
+        images={galleryImages}
+        variant={galleryVariant}
+      />
 
       <section className="surface-light border-y border-[var(--color-border)] bg-[var(--color-panel)]">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-4 px-5 py-12 sm:flex-row sm:items-center lg:px-8">
@@ -191,7 +194,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
               {content.ctaPrimary}
             </Link>
             <a
-              href="mailto:info@mag-group.example"
+              href="mailto:info@mag-group.eu"
               className="rounded-sm border border-[var(--color-border)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-text)] focus-visible:outline-offset-2"
             >
               {content.ctaSecondary}

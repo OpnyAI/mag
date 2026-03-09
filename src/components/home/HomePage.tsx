@@ -96,7 +96,7 @@ export function HomePage({ locale }: HomePageProps) {
                 {content.ctaPrimary}
               </Link>
               <a
-                href="tel:+497121555000"
+                href="tel:+4917674188448"
                 className="border border-white/60 px-5 py-3 text-sm font-medium text-white transition hover:border-white"
               >
                 {content.ctaSecondary}
@@ -213,7 +213,7 @@ export function HomePage({ locale }: HomePageProps) {
               {content.ctaPrimary}
             </Link>
             <a
-              href="mailto:info@mag-group.example"
+              href="mailto:info@mag-group.eu"
               className="border border-[var(--color-border)] px-5 py-3 text-sm font-medium transition hover:border-[var(--color-accent)]"
             >
               {content.ctaSecondary}

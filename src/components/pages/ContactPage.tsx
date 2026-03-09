@@ -67,7 +67,7 @@ export function ContactPage({ locale }: ContactPageProps) {
               {content.ctaSecondary}
             </a>
             <Link
-              href={localizePath(locale, "/services/casting-materials")}
+              href={localizePath(locale, "/services")}
               className="rounded-sm border border-[var(--color-border)] px-5 py-3 text-sm font-medium hover:border-[var(--color-accent)]"
             >
               {content.nav.services}
