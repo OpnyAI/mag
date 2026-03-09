@@ -75,7 +75,7 @@ export function HomePage({ locale }: HomePageProps) {
           sizes="100vw"
         />
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.64)_35%,rgba(0,0,0,0.36)_58%,rgba(0,0,0,0.12)_78%,rgba(0,0,0,0)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.45)_30%,rgba(0,0,0,0.15)_55%,rgba(0,0,0,0)_75%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.68)_34%,rgba(0,0,0,0.42)_58%,rgba(0,0,0,0.18)_78%,rgba(0,0,0,0.02)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.64)_0%,rgba(0,0,0,0.44)_30%,rgba(0,0,0,0.18)_56%,rgba(0,0,0,0.02)_78%)]" />
 
         <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-start px-5 pb-10 pt-[calc(6rem+env(safe-area-inset-top))] md:items-end md:pb-[120px] md:pt-[160px] lg:px-8">
           <div className="max-w-[700px] text-white">
@@ -85,7 +85,7 @@ export function HomePage({ locale }: HomePageProps) {
             <h1 className="mt-4 max-w-[20ch] text-[clamp(34px,8vw,44px)] font-bold leading-[1.1] tracking-tight sm:max-w-[15ch] md:text-[clamp(42px,5vw,64px)]">
               {content.heroTitle}
             </h1>
-            <p className="mt-6 max-w-[680px] text-[18px] leading-relaxed text-white/90">
+            <p className="mt-7 max-w-[44ch] text-[15px] leading-relaxed text-white/86 md:max-w-[56ch] md:text-[17px]">
               {content.heroSubtitle}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-4">

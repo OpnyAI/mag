@@ -49,7 +49,7 @@ export function CompanyPage({ locale }: CompanyPageProps) {
               ))}
             </ul>
           </div>
-          <div className="border border-[var(--color-border)] bg-[var(--color-panel)]">
+          <div className="overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)]">
             <Image
               src={valuesImageSrc}
               alt={valuesImageAltByLocale[locale]}

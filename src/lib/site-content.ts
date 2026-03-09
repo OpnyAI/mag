@@ -325,10 +325,10 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
   de: {
     localeLabel: "DE",
     siteName: "MAG - Metal Advancement Group",
-    tagline: "Industrieller Metallguss, Engineering und Metalllösungen",
+    tagline: "ENGINEERING • GIESSEREITECHNOLOGIEN • METALLVERARBEITUNG",
     heroTitle: "Industrieller Metallguss, Engineering und integrierte Metalllösungen",
     heroSubtitle:
-      "MAG - Metal Advancement Group ist ein deutsches Industrieunternehmen aus Baden-Württemberg. Wir verbinden Engineering, moderne Gießereitechnologien, Metallverarbeitung und Supply-Chain-Integration zu einer durchgängigen industriellen Wertschöpfungskette.",
+      "MAG verbindet Engineering, moderne Gießereitechnologien, Metallverarbeitung und Supply-Chain-Integration für internationale Industrieprojekte.",
     stats: [
       { label: "Mitarbeitende", value: "65" },
       { label: "Verarbeiteter Stahl/Jahr", value: "ca. 3.800 t" },
@@ -393,7 +393,7 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     tagline: "Industrial Casting, Engineering & Metal Solutions",
     heroTitle: "Industrial Casting, Engineering and Integrated Metal Solutions",
     heroSubtitle:
-      "MAG - Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg. We combine engineering, advanced casting technologies, metal manufacturing and integrated supply chain solutions into one industrial value chain.",
+      "MAG combines engineering, advanced casting technologies, metal manufacturing and supply chain integration for international industrial projects.",
     stats: [
       { label: "Employees", value: "65" },
       { label: "Processed steel/year", value: "approx. 3,800 t" },
@@ -458,7 +458,7 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     tagline: "Fonderie industrielle, ingénierie et solutions métalliques",
     heroTitle: "Fonderie industrielle, ingénierie et solutions métalliques intégrées",
     heroSubtitle:
-      "MAG - Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg. Nous combinons l'ingénierie, les technologies de fonderie avancées, la fabrication métallique et l'intégration de la chaîne logistique dans une chaîne de valeur industrielle complète.",
+      "MAG associe l’ingénierie, les technologies de fonderie avancées, la fabrication métallique et l’intégration de la chaîne logistique pour des projets industriels internationaux.",
     stats: [
       { label: "Collaborateurs", value: "65" },
       { label: "Acier traité/an", value: "env. 3 800 t" },

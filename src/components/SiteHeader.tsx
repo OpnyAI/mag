@@ -294,32 +294,18 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       </div>
 
       {mobileOpen ? (
-        <div
-          id="mobile-main-menu"
-          className="border-t border-[color:rgba(138,150,158,0.28)] bg-[var(--color-surface)] px-5 py-4 lg:hidden"
-        >
-          <div className="space-y-1">
-            {navItems.map((item, index) => {
-              if (index !== 1) {
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block py-2 text-sm text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
-                    onClick={() => {
-                      setMobileOpen(false);
-                      setMobileServicesOpen(false);
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
-
-              return (
-                <div key={item.href}>
-                  <div className="flex items-center justify-between">
+        <div className="absolute inset-x-0 top-full z-50 lg:hidden">
+          <div className="bg-[color:rgba(24,28,32,0.72)]">
+            <div
+              id="mobile-main-menu"
+              className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-[color:rgba(138,150,158,0.28)] bg-[var(--color-surface)] px-5 py-4"
+            >
+            <div className="space-y-1">
+              {navItems.map((item, index) => {
+                if (index !== 1) {
+                  return (
                     <Link
+                      key={item.href}
                       href={item.href}
                       className="block py-2 text-sm text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
                       onClick={() => {
@@ -329,80 +315,98 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     >
                       {item.label}
                     </Link>
-                    <button
-                      type="button"
-                      className="inline-flex items-center py-2 text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
-                      aria-label={`${item.label} submenu`}
-                      aria-expanded={mobileServicesOpen}
-                      aria-controls="mobile-services-submenu"
-                      onClick={() =>
-                        setMobileServicesOpen((currentState) => !currentState)
-                      }
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        aria-hidden="true"
-                        className={`transition-transform ${
-                          mobileServicesOpen ? "rotate-180" : ""
-                        }`}
-                      >
-                        <path
-                          d="M2.2 4.5L6 8.3l3.8-3.8"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.4"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                  );
+                }
 
-                  <div
-                    id="mobile-services-submenu"
-                    className={`overflow-hidden transition-all duration-200 ${
-                      mobileServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="pb-1 pl-4 pt-1">
-                      {services.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={servicePath(locale, service.slug)}
-                          className="block py-2 text-sm text-[color:rgba(231,235,238,0.74)] hover:text-[var(--color-accent)]"
-                          onClick={() => {
-                            setMobileOpen(false);
-                            setMobileServicesOpen(false);
-                          }}
+                return (
+                  <div key={item.href}>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href={item.href}
+                        className="block py-2 text-sm text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setMobileServicesOpen(false);
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        className="inline-flex items-center py-2 text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
+                        aria-label={`${item.label} submenu`}
+                        aria-expanded={mobileServicesOpen}
+                        aria-controls="mobile-services-submenu"
+                        onClick={() =>
+                          setMobileServicesOpen((currentState) => !currentState)
+                        }
+                      >
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          aria-hidden="true"
+                          className={`transition-transform ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
                         >
-                          {service.title[locale]}
-                        </Link>
-                      ))}
+                          <path
+                            d="M2.2 4.5L6 8.3l3.8-3.8"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.4"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div
+                      id="mobile-services-submenu"
+                      className={`overflow-hidden transition-all duration-200 ${
+                        mobileServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="pb-1 pl-4 pt-1">
+                        {services.map((service) => (
+                          <Link
+                            key={service.slug}
+                            href={servicePath(locale, service.slug)}
+                            className="block py-2 text-sm text-[color:rgba(231,235,238,0.74)] hover:text-[var(--color-accent)]"
+                            onClick={() => {
+                              setMobileOpen(false);
+                              setMobileServicesOpen(false);
+                            }}
+                          >
+                            {service.title[locale]}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
 
-          <div className="mt-4 flex items-center gap-3 border-t border-[color:rgba(138,150,158,0.28)] pt-4">
-            {(["de", "en", "fr"] as Locale[]).map((targetLocale) => (
-              <Link
-                key={targetLocale}
-                href={translatedPath(targetLocale, pathname)}
-                className={`text-xs font-semibold tracking-[0.12em] ${
-                  targetLocale === locale
-                    ? "text-[var(--color-accent)]"
-                    : "text-[color:rgba(231,235,238,0.72)]"
-                }`}
-                onClick={() => {
-                  setMobileOpen(false);
-                  setMobileServicesOpen(false);
-                }}
-              >
-                {targetLocale.toUpperCase()}
-              </Link>
-            ))}
+              <div className="mt-4 flex items-center gap-3 border-t border-[color:rgba(138,150,158,0.28)] pt-4">
+                {(["de", "en", "fr"] as Locale[]).map((targetLocale) => (
+                  <Link
+                    key={targetLocale}
+                    href={translatedPath(targetLocale, pathname)}
+                    className={`text-xs font-semibold tracking-[0.12em] ${
+                      targetLocale === locale
+                        ? "text-[var(--color-accent)]"
+                        : "text-[color:rgba(231,235,238,0.72)]"
+                    }`}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                  >
+                    {targetLocale.toUpperCase()}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       ) : null}
