@@ -49,7 +49,7 @@ function getGalleryImages(slug: ServiceSlug): string[] {
     return fileNames.map((fileName) => `/images/services/${folderName}/${fileName}`);
   });
 
-  return [...new Set(imagePaths)];
+  return Array.from(new Set(imagePaths));
 }
 
 export function ServicePage({ locale, slug }: ServicePageProps) {
