@@ -2,12 +2,19 @@ import { Metadata } from "next";
 import { PageFrame } from "@/components/PageFrame";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  locale: "de",
-  title: "Datenschutz | MAG - Metall Advancement Group GmbH",
-  description: "Datenschutzhinweise der MAG - Metall Advancement Group GmbH",
-  path: "/datenschutz",
-});
+export const metadata: Metadata = {
+  ...buildPageMetadata({
+    locale: "de",
+    title: "Datenschutz | MAG - Metall Advancement Group GmbH",
+    description: "Datenschutzhinweise der MAG - Metall Advancement Group GmbH",
+    path: "/datenschutz",
+    includeLanguageAlternates: false,
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Page() {
   return (

@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import { Locale } from "@/lib/types";
 import { localizePath } from "@/lib/site-content";
 
-export const siteUrl = "https://www.mag-group.example";
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
+  "https://www.mag-group.example";
 
 interface MetadataInput {
   locale: Locale;
@@ -10,6 +12,7 @@ interface MetadataInput {
   description: string;
   path: string;
   image?: string;
+  includeLanguageAlternates?: boolean;
 }
 
 export function absoluteUrl(path: string): string {
@@ -25,9 +28,17 @@ export function buildPageMetadata({
   description,
   path,
   image,
+  includeLanguageAlternates = true,
 }: MetadataInput): Metadata {
   const canonicalPath = localizePath(locale, path);
   const imagePath = image ?? `/images/hero/hero-${locale}.jpg`;
+  const languageAlternates = includeLanguageAlternates
+    ? {
+        de: localizePath("de", path),
+        en: localizePath("en", path),
+        fr: localizePath("fr", path),
+      }
+    : undefined;
 
   return {
     title,
@@ -35,11 +46,7 @@ export function buildPageMetadata({
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: canonicalPath,
-      languages: {
-        de: localizePath("de", path),
-        en: localizePath("en", path),
-        fr: localizePath("fr", path),
-      },
+      languages: languageAlternates,
     },
     openGraph: {
       type: "website",

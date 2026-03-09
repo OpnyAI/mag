@@ -2,12 +2,19 @@ import { Metadata } from "next";
 import { PageFrame } from "@/components/PageFrame";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  locale: "de",
-  title: "Impressum | MAG - Metall Advancement Group GmbH",
-  description: "Impressum der MAG - Metall Advancement Group GmbH",
-  path: "/impressum",
-});
+export const metadata: Metadata = {
+  ...buildPageMetadata({
+    locale: "de",
+    title: "Impressum | MAG - Metall Advancement Group GmbH",
+    description: "Impressum der MAG - Metall Advancement Group GmbH",
+    path: "/impressum",
+    includeLanguageAlternates: false,
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Page() {
   return (

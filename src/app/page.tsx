@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "de",
-  title: "MAG - Industrieller Metallguss, Engineering und Metalllösungen",
+  title: "Metallguss, Engineering & Metallverarbeitung | MAG – Metal Advancement Group",
   description:
-    "Deutsches Industrieunternehmen für Gießereitechnologien, Metallverarbeitung, Engineering und integrierte Supply-Chain-Lösungen.",
+    "MAG ist Ihr Partner für industriellen Metallguss, Engineering und Metallverarbeitung. Gießereitechnologien, CNC-Fertigung, Schweißbaugruppen und Supply-Chain-Integration für internationale Industrieprojekte.",
   path: "/",
 });
 

@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "en",
-  title: "MAG - Industrial Casting, Engineering & Metal Solutions",
+  title: "Industrial Casting, Engineering & Metal Manufacturing | MAG",
   description:
-    "German industrial company delivering advanced casting technologies, metal manufacturing, engineering and integrated supply chain solutions.",
+    "MAG delivers industrial casting, engineering and metal manufacturing solutions including foundry technologies, CNC machining, welded assemblies and integrated supply chain support.",
   path: "/",
 });
 

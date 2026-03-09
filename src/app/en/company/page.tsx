@@ -4,8 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "en",
-  title: "About MAG",
-  description: "Company profile, core industrial capabilities, materials and industries served by MAG.",
+  title: "Company | MAG – Metal Advancement Group",
+  description:
+    "Learn more about MAG as a German industrial partner for casting, engineering, metal manufacturing and integrated supply chain solutions.",
   path: "/company",
 });
 

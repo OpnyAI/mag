@@ -4,8 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "de",
-  title: "Über MAG",
-  description: "Unternehmensprofil, Leistungsbereiche, Werkstoffe und Branchenfokus von MAG.",
+  title: "Unternehmen | MAG – Metal Advancement Group",
+  description:
+    "Erfahren Sie mehr über MAG – Metall Advancement Group GmbH: industrieller Metallguss, Engineering-Kompetenz, internationale Fertigungspartner und integrierte Wertschöpfung.",
   path: "/company",
 });
 

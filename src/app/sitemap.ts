@@ -9,8 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/company",
     "/services",
     "/contact",
-    "/impressum",
-    "/datenschutz",
     "/en",
     "/en/company",
     "/en/services",
@@ -27,10 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     `/fr/services/${slug}`,
   ]);
 
-  return [...basePages, ...servicePages].map((path) => ({
-    url: absoluteUrl(path),
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: path === "/" ? 1 : 0.7,
-  }));
+  return [...basePages, ...servicePages].map((path) => {
+    const isHome = path === "/" || path === "/en" || path === "/fr";
+    const isServiceDetail = path.includes("/services/") && path !== "/services" && path !== "/en/services" && path !== "/fr/services";
+
+    return {
+      url: absoluteUrl(path),
+      lastModified: now,
+      changeFrequency: isHome ? "weekly" : isServiceDetail ? "monthly" : "monthly",
+      priority: isHome ? 1 : isServiceDetail ? 0.7 : 0.8,
+    };
+  });
 }

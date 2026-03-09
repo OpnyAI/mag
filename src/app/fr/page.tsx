@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "fr",
-  title: "MAG - Fonderie industrielle, ingénierie et solutions métalliques",
+  title: "Fonderie industrielle, ingénierie et fabrication métallique | MAG",
   description:
-    "Entreprise industrielle allemande combinant fonderie, fabrication métallique, ingénierie et intégration de la chaîne logistique.",
+    "MAG propose des solutions industrielles en fonderie, ingénierie et fabrication métallique, y compris usinage CNC, assemblages soudés et intégration logistique.",
   path: "/",
 });
 

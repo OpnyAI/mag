@@ -1,24 +1,30 @@
-import { companyAddress, email, phone } from "@/lib/site-content";
+import { email, phone } from "@/lib/site-content";
 import { absoluteUrl } from "@/lib/seo";
 
 export function StructuredData() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "MAG - Metal Advancement Group",
-    legalName: "MAG - Metal Advancement Group",
+    name: "MAG - Metall Advancement Group GmbH",
+    legalName: "MAG - Metall Advancement Group GmbH",
     url: absoluteUrl("/"),
+    logo: absoluteUrl("/images/brand/logo.png"),
     email,
     telephone: phone,
+    vatID: "DE288082662",
     address: {
       "@type": "PostalAddress",
-      streetAddress: companyAddress,
+      streetAddress: "Tränkestraße 1",
+      postalCode: "70597",
+      addressLocality: "Stuttgart",
       addressCountry: "DE",
     },
-    sameAs: [],
-    department: {
-      "@type": "Organization",
-      name: "Manufacturer",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: phone,
+      email,
+      availableLanguage: ["de", "en", "fr"],
     },
   };
 

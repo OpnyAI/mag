@@ -4,8 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   locale: "fr",
-  title: "À propos de MAG",
-  description: "Profil d'entreprise, domaines de compétences, matériaux et secteurs industriels couverts par MAG.",
+  title: "Entreprise | MAG – Metal Advancement Group",
+  description:
+    "Découvrez MAG, partenaire industriel allemand spécialisé en fonderie, ingénierie, fabrication métallique et chaîne logistique intégrée.",
   path: "/company",
 });
 
