@@ -2,6 +2,7 @@ export type Locale = "de" | "en" | "fr";
 
 export type ServiceSlug =
   | "casting-materials"
+  | "forging-forming"
   | "weldments-steel-structures"
   | "vehicle-systems"
   | "cnc-machining"
@@ -18,6 +19,8 @@ export interface LocalizedText {
 export interface ServiceItem {
   slug: ServiceSlug;
   image: string;
+  heroAlt: LocalizedText;
+  galleryAlts?: LocalizedText[];
   title: LocalizedText;
   short: LocalizedText;
   intro: LocalizedText;
@@ -58,13 +61,18 @@ export interface LocaleContent {
   };
   company: {
     title: string;
-    intro: string;
+    intro: string[];
+    teaser: string[];
     valuesTitle: string;
     values: string[];
     factsTitle: string;
     facts: { label: string; value: string }[];
     locationsTitle: string;
     locationsText: string;
+    whyMagTitle: string;
+    whyMagItems: string[];
+    successStoriesTitle: string;
+    successStories: { label: string; text: string }[];
   };
   contact: {
     title: string;

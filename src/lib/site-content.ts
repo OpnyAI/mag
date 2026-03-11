@@ -14,6 +14,28 @@ export const services: ServiceItem[] = [
   {
     slug: "casting-materials",
     image: "/images/services/service-1.jpg",
+    heroAlt: {
+      de: "Industrielle Gusskomponente aus Stahl für hochbelastete Anwendungen",
+      en: "Industrial cast steel component for heavy-duty applications",
+      fr: "Composant moulé en acier pour applications industrielles exigeantes",
+    },
+    galleryAlts: [
+      {
+        de: "Sandgussbauteil für industrielle Pumpentechnik",
+        en: "Sand-cast component for industrial pump technology",
+        fr: "Composant moulé en sable pour la technologie des pompes industrielles",
+      },
+      {
+        de: "Aluminium-Sandgussteil mit präziser Geometrie",
+        en: "Aluminum sand-cast part with precise geometry",
+        fr: "Pièce en aluminium moulée en sable avec géométrie précise",
+      },
+      {
+        de: "Gusskomponente für thermisch belastete Industrieanwendung",
+        en: "Cast component for thermally demanding industrial application",
+        fr: "Composant moulé pour application industrielle à forte contrainte thermique",
+      },
+    ],
     title: {
       de: "Gießereitechnologien & Werkstoffe",
       en: "Casting Technologies & Materials",
@@ -56,8 +78,82 @@ export const services: ServiceItem[] = [
     },
   },
   {
+    slug: "forging-forming",
+    image: "/images/services/schmiedteile/schmiede1.jpg",
+    heroAlt: {
+      de: "Schmiedeteil in der industriellen Umformfertigung",
+      en: "Forged part in industrial forming production",
+      fr: "Pièce forgée en production industrielle de formage",
+    },
+    galleryAlts: [
+      {
+        de: "Großes Schmiedebauteil für hochbelastete Maschinenanwendung",
+        en: "Large forged component for heavy-duty machinery application",
+        fr: "Grande pièce forgée pour application machine fortement sollicitée",
+      },
+      {
+        de: "Nachbearbeitetes Schmiedeteil für einbaufertige Stahlbaugruppe",
+        en: "Post-processed forged part for ready-to-install steel assembly",
+        fr: "Pièce forgée finie pour sous-ensemble acier prêt au montage",
+      },
+    ],
+    title: {
+      de: "Schmieden und Umformtechnik",
+      en: "Forging and Forming Technologies",
+      fr: "Forge et technologies de formage",
+    },
+    short: {
+      de: "Hochbelastete Schmiedeteile und Umformlösungen für industrielle Stahlkomponenten",
+      en: "Heavy-duty forged parts and forming solutions for industrial steel components",
+      fr: "Pièces forgées fortement sollicitées et solutions de formage pour composants industriels en acier",
+    },
+    intro: {
+      de: "MAG arbeitet mit spezialisierten Schmiedepartnern für hochbelastete Bauteile. Presskräfte bis 5.000 Tonnen ermöglichen die Herstellung großer Stahlkomponenten in unterschiedlichen Dimensionen. Die Leistungen umfassen Werkzeugauslegung, Schmiedeteile in verschiedenen Geometrien sowie Nachbearbeitung für einbaufertige Komponenten.",
+      en: "MAG works with specialized forging partners for highly stressed components. Press capacities of up to 5,000 tons enable the production of large steel components in various dimensions. Services include tool design, forged parts in different geometries and post-processing for ready-to-install components.",
+      fr: "MAG travaille avec des partenaires spécialisés dans la forge pour des composants fortement sollicités. Des capacités de presse allant jusqu’à 5 000 tonnes permettent la fabrication de grandes pièces en acier dans différentes dimensions. Les prestations comprennent la conception d’outillages, les pièces forgées de diverses géométries et les opérations de finition pour obtenir des composants prêts à monter.",
+    },
+    capabilities: {
+      de: [
+        "Schmiedeteile für hochbelastete industrielle Anwendungen",
+        "Presskräfte bis 5.000 Tonnen",
+        "Werkzeugauslegung und Bauteilauslegung",
+        "Nachbearbeitung zu einbaufertigen Komponenten",
+      ],
+      en: [
+        "Forged parts for highly stressed industrial applications",
+        "Press capacities up to 5,000 tons",
+        "Tooling and component design support",
+        "Post-processing to ready-to-install components",
+      ],
+      fr: [
+        "Pièces forgées pour applications industrielles fortement sollicitées",
+        "Capacités de presse jusqu’à 5 000 tonnes",
+        "Conception d’outillages et de composants",
+        "Finition pour composants prêts à monter",
+      ],
+    },
+    useCases: {
+      de: [
+        "Maschinenbau",
+        "Hochbelastete Stahlkomponenten",
+        "Industrielle Sonderbauteile",
+      ],
+      en: ["Machinery", "Heavy-duty steel components", "Industrial special components"],
+      fr: [
+        "Construction de machines",
+        "Composants acier fortement sollicités",
+        "Composants industriels spéciaux",
+      ],
+    },
+  },
+  {
     slug: "weldments-steel-structures",
     image: "/images/services/service-2.jpg",
+    heroAlt: {
+      de: "Komplexe Schweißbaugruppe aus Stahl für Industrieanlagen",
+      en: "Complex welded steel assembly for industrial plants",
+      fr: "Assemblage soudé complexe en acier pour installations industrielles",
+    },
     title: {
       de: "Schweißbaugruppen & Stahlkonstruktionen",
       en: "Welded Assemblies & Structural Steel",
@@ -102,6 +198,11 @@ export const services: ServiceItem[] = [
   {
     slug: "vehicle-systems",
     image: "/images/services/fahrzeugbau/WA0034.jpg",
+    heroAlt: {
+      de: "Hochbelastete Fahrzeugstruktur für industrielle Spezialanwendungen",
+      en: "Heavy-duty vehicle structure for industrial special applications",
+      fr: "Structure de véhicule fortement sollicitée pour applications industrielles spéciales",
+    },
     title: {
       de: "Fahrzeugbau / MAG Vehicle Systems",
       en: "Vehicle Structures / MAG Vehicle Systems",
@@ -146,6 +247,11 @@ export const services: ServiceItem[] = [
   {
     slug: "cnc-machining",
     image: "/images/services/cnc/DSC_0376.JPG",
+    heroAlt: {
+      de: "CNC-bearbeitetes Präzisionsbauteil in der Metallfertigung",
+      en: "CNC-machined precision component in metal manufacturing",
+      fr: "Composant de précision usiné CNC en fabrication métallique",
+    },
     title: {
       de: "CNC-Präzisionsfertigung & Oberflächen",
       en: "CNC Precision Machining & Surface Treatment",
@@ -190,6 +296,11 @@ export const services: ServiceItem[] = [
   {
     slug: "engineering-simulation",
     image: "/images/services/engineering/engineering_1.jpeg",
+    heroAlt: {
+      de: "Engineering und Simulation für industrielle Stahlkomponenten",
+      en: "Engineering and simulation for industrial steel components",
+      fr: "Ingénierie et simulation pour composants industriels en acier",
+    },
     title: {
       de: "Engineering, Simulation & Co-Engineering",
       en: "Engineering, Simulation & Co-Engineering",
@@ -234,6 +345,11 @@ export const services: ServiceItem[] = [
   {
     slug: "logistics-supply-chain",
     image: "/images/services/logistics/logistics_1.jpeg",
+    heroAlt: {
+      de: "Internationale Transport- und Lieferkoordination für Industrieprojekte",
+      en: "International transport and delivery coordination for industrial projects",
+      fr: "Coordination internationale du transport et des livraisons pour projets industriels",
+    },
     title: {
       de: "Logistik & Supply Chain",
       en: "Logistics & Supply Chain",
@@ -278,6 +394,11 @@ export const services: ServiceItem[] = [
   {
     slug: "quality-certifications",
     image: "/images/services/certificates/IMG_2154.jpg",
+    heroAlt: {
+      de: "Qualitätsprüfung und Zertifizierungsdokumentation im Industriestandard",
+      en: "Quality testing and certification documentation to industrial standards",
+      fr: "Contrôle qualité et documentation de certification selon normes industrielles",
+    },
     title: {
       de: "Qualitätssicherung & Zertifizierungen",
       en: "Quality Assurance & Certifications",
@@ -353,8 +474,15 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     },
     company: {
       title: "Über MAG",
-      intro:
-        "MAG - Metal Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg. Als technologieorientierter Partner für internationale Industrieunternehmen verbindet MAG Engineering-Kompetenz, moderne Gießereitechnologien, Metallverarbeitung und Supply-Chain-Integration zu einer durchgängigen industriellen Wertschöpfungskette.",
+      teaser: [
+        "MAG – Metal Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette.",
+        "MAG unterstützt internationale Industrieunternehmen von der Konzeptphase bis zur Serienproduktion und Logistik und bündelt dabei über 40 Jahre technisches Know-how aus der Entwicklung von Tiger Lift zu einer leistungsstarken Industrieplattform.",
+      ],
+      intro: [
+        "MAG – Metal Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette für industrielle Stahlkomponenten und Baugruppen.",
+        "MAG unterstützt internationale Industrieunternehmen von der Konzept- und Engineeringphase über Fertigung und Qualitätssicherung bis zur Serienproduktion und Logistik. Durch die Kombination aus deutscher Entwicklungs- und Projektkompetenz und operativer Fertigungserfahrung in der Türkei bietet MAG effiziente und skalierbare Lösungen für industrielle Anwendungen.",
+        "Die Metal Advancement Group ging aus der in Baden-Württemberg ansässigen Tiger Lift GmbH hervor und baut auf deren Erfahrung in Metallverarbeitung, Stahlkonstruktion und internationaler Industrieproduktion auf. Heute bündelt MAG diese Kompetenzen in einer technologisch orientierten Industrieplattform für anspruchsvolle Stahl- und Metalllösungen.",
+      ],
       valuesTitle: "Leistungsbereiche",
       values: [
         "Gießereitechnologien und Werkstoffentwicklung",
@@ -379,6 +507,52 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
       locationsTitle: "Branchen und Nutzungsbereiche",
       locationsText:
         "MAG liefert Komponenten und Baugruppen für Maschinenbau, Automotive, Bergbau/Mining, Pumpenindustrie, Energieanlagen, Infrastrukturprojekte, MDF-Industrie sowie Rüstungsindustrie / Defence.",
+      whyMagTitle: "Warum MAG?",
+      whyMagItems: [
+        "Alles aus einer Hand",
+        "Erfahrung in der Rüstungsindustrie",
+        "Hochwertige Stahlteile und Gussteile",
+        "Komplexe Schweißbaugruppen",
+        "Hochwertige Blecharbeiten",
+        "Kurze Lieferzeiten",
+        "Mehr als 40 Jahre technische Expertise",
+        "Kundenspezifische Lösungen statt Standardware",
+      ],
+      successStoriesTitle: "Erfolgsgeschichten",
+      successStories: [
+        {
+          label: "Pumpenindustrie",
+          text: "Analyse eines Pumpensatzes und Reverse Engineering eines Bauteils mit längerer Lebensdauer als das Original.",
+        },
+        {
+          label: "Bergbau",
+          text: "Werksinterne Analyse eines Kegelbrechers mit 40 % Lebensdauersteigerung.",
+        },
+        {
+          label: "Werkstoffentwicklung",
+          text: "Optimierung eines 904L-Edelstahls mit verbessertem Korrosionsverhalten und längerer Lebensdauer.",
+        },
+        {
+          label: "Automotive / EV",
+          text: "Herstellungs- und F&E-Studien für EV-Antriebssysteme mit erhöhter Motordrehmomentleistung und verbessertem Wirkungsgrad.",
+        },
+        {
+          label: "MDF-Industrie",
+          text: "Umstellung von Feinguss auf Sandguss mit wirtschaftlichem Vorteil.",
+        },
+        {
+          label: "Wärmebehandlungssysteme",
+          text: "Reduzierung der Ausschussrate auf null in einem Zementierungswärme-Behandlungssystem.",
+        },
+        {
+          label: "Special-Alloy-Mühle",
+          text: "Leistungssteigerung von Schrauben- und Trommelschleifern um 50 %.",
+        },
+        {
+          label: "Fluidtechnik",
+          text: "Entwicklung einer Wasserverteilungsrutsche mit minimaler Turbulenz durch simulationsgestützte Auslegung.",
+        },
+      ],
     },
     contact: {
       title: "Kontakt",
@@ -418,8 +592,15 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     },
     company: {
       title: "About MAG",
-      intro:
-        "MAG - Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg. As a technology-driven partner for international industrial customers, MAG combines engineering expertise, advanced casting technologies, metal manufacturing and integrated supply chain solutions into a complete industrial value chain.",
+      teaser: [
+        "MAG – Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into one integrated value chain.",
+        "MAG supports international industrial customers from concept and engineering through serial production and logistics, building on more than 40 years of technical expertise rooted in Tiger Lift's development background.",
+      ],
+      intro: [
+        "MAG – Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into an integrated value chain for industrial steel components and assemblies.",
+        "MAG supports international industrial customers from concept and engineering through manufacturing, quality assurance, serial production and logistics. By combining German development and project expertise with operational manufacturing experience in Turkey, MAG delivers efficient and scalable solutions for industrial applications.",
+        "Metal Advancement Group originated from Tiger Lift GmbH, based in Baden-Wuerttemberg, and builds on its experience in metal processing, steel structures and international industrial production. Today, MAG consolidates these competencies in a technology-oriented industrial platform for demanding steel and metal solutions.",
+      ],
       valuesTitle: "Core Industrial Capabilities",
       values: [
         "Casting technologies and material expertise",
@@ -444,6 +625,52 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
       locationsTitle: "Industries and Application Areas",
       locationsText:
         "MAG supplies components and assemblies for machinery and heavy equipment, automotive, mining and mineral processing, pump industry, energy systems, infrastructure projects, MDF industry, and defence and security applications.",
+      whyMagTitle: "Why MAG?",
+      whyMagItems: [
+        "One-stop industrial partner",
+        "Experience in defence industry projects",
+        "High-quality steel and cast components",
+        "Complex welded assemblies",
+        "High-quality sheet metal work",
+        "Short lead times",
+        "More than 40 years of technical expertise",
+        "Customer-specific solutions instead of standard products",
+      ],
+      successStoriesTitle: "Success Stories",
+      successStories: [
+        {
+          label: "Pump Industry",
+          text: "Analysis of a pump system and reverse engineering of a component with longer service life than the original part.",
+        },
+        {
+          label: "Mining",
+          text: "In-house analysis of a cone crusher leading to a 40% increase in service life.",
+        },
+        {
+          label: "Material Development",
+          text: "Optimization of 904L stainless steel with improved corrosion resistance and extended lifetime.",
+        },
+        {
+          label: "Automotive / EV",
+          text: "Manufacturing and R&D studies for EV drivetrain systems with increased motor torque and improved efficiency.",
+        },
+        {
+          label: "MDF Industry",
+          text: "Conversion from investment casting to sand casting with an economic advantage.",
+        },
+        {
+          label: "Heat Treatment Systems",
+          text: "Reduction of scrap rate to zero in a carburizing heat-treatment system.",
+        },
+        {
+          label: "Special-Alloy Mill",
+          text: "50% performance increase of screw and drum grinders.",
+        },
+        {
+          label: "Fluid Handling",
+          text: "Development of a water distribution chute with minimal turbulence using simulation-driven design.",
+        },
+      ],
     },
     contact: {
       title: "Contact",
@@ -483,8 +710,15 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     },
     company: {
       title: "À propos de MAG",
-      intro:
-        "MAG - Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg. En tant que partenaire technologique pour des clients industriels internationaux, MAG combine l'expertise en ingénierie, les technologies de fonderie avancées, la fabrication métallique et l'intégration de la chaîne logistique au sein d'une chaîne de valeur industrielle complète.",
+      teaser: [
+        "MAG – Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée.",
+        "MAG accompagne des industriels internationaux de la phase conceptuelle et d'ingénierie jusqu'à la production en série et la logistique, en s'appuyant sur plus de 40 ans d'expertise technique issue de l'héritage de Tiger Lift.",
+      ],
+      intro: [
+        "MAG – Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée pour des composants et sous-ensembles industriels en acier.",
+        "MAG accompagne des industriels internationaux depuis la phase de conception et d'ingénierie jusqu'à la fabrication, l'assurance qualité, la production en série et la logistique. En combinant les compétences allemandes en développement et gestion de projet avec une expérience opérationnelle de fabrication en Turquie, MAG propose des solutions efficaces et évolutives pour les applications industrielles.",
+        "Metal Advancement Group est issue de Tiger Lift GmbH, implantée dans le Bade-Wurtemberg, et s'appuie sur son expérience dans la transformation des métaux, les structures en acier et la production industrielle internationale. Aujourd'hui, MAG regroupe ces compétences dans une plateforme industrielle orientée technologie pour des solutions acier et métal exigeantes.",
+      ],
       valuesTitle: "Domaines de compétences",
       values: [
         "Technologies de fonderie et expertise matériaux",
@@ -509,6 +743,52 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
       locationsTitle: "Secteurs et domaines d'utilisation",
       locationsText:
         "MAG fournit des composants et des sous-ensembles pour la construction de machines, l'automobile, l'industrie minière, l'industrie des pompes, les systèmes énergétiques, les projets d'infrastructure, l'industrie MDF et les applications de défense et de sécurité.",
+      whyMagTitle: "Pourquoi MAG ?",
+      whyMagItems: [
+        "Partenaire industriel intégré",
+        "Expérience dans des projets de l’industrie de défense",
+        "Pièces acier et pièces de fonderie de haute qualité",
+        "Assemblages soudés complexes",
+        "Tôlerie de haute qualité",
+        "Délais courts",
+        "Plus de 40 ans d’expertise technique",
+        "Solutions sur mesure au lieu de produits standard",
+      ],
+      successStoriesTitle: "Références / Succès clients",
+      successStories: [
+        {
+          label: "Industrie des pompes",
+          text: "Analyse d’un ensemble de pompe et ingénierie inverse d’un composant avec une durée de vie supérieure à la pièce d’origine.",
+        },
+        {
+          label: "Industrie minière",
+          text: "Analyse interne d’un concasseur conique entraînant une augmentation de 40 % de la durée de vie.",
+        },
+        {
+          label: "Développement matériaux",
+          text: "Optimisation d’un acier inoxydable 904L avec meilleure résistance à la corrosion et durée de vie accrue.",
+        },
+        {
+          label: "Automobile / EV",
+          text: "Études de fabrication et de R&D pour des systèmes de transmission de véhicules électriques avec augmentation du couple moteur et amélioration du rendement.",
+        },
+        {
+          label: "Industrie MDF",
+          text: "Passage de la fonderie de précision au moulage en sable avec avantage économique.",
+        },
+        {
+          label: "Systèmes de traitement thermique",
+          text: "Réduction du taux de rebut à zéro dans un système de traitement thermique de cémentation.",
+        },
+        {
+          label: "Broyeur en alliage spécial",
+          text: "Augmentation de 50 % des performances des broyeurs à vis et à tambour.",
+        },
+        {
+          label: "Mécanique des fluides",
+          text: "Développement d’une goulotte de distribution d’eau avec turbulence minimale grâce à une conception assistée par simulation.",
+        },
+      ],
     },
     contact: {
       title: "Contact",
@@ -522,7 +802,8 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
 export const serviceOrder: ServiceSlug[] = services.map((service) => service.slug);
 
 export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
-  "casting-materials": ["sandguss", "shellguss", "schmiedteile"],
+  "casting-materials": ["sandguss", "shellguss"],
+  "forging-forming": ["schmiedteile"],
   "weldments-steel-structures": ["schweisskonstr"],
   "vehicle-systems": ["fahrzeugbau"],
   "cnc-machining": ["cnc"],
@@ -531,8 +812,13 @@ export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
   "quality-certifications": ["certificates"],
 };
 
+export const serviceGalleryExcludedFiles: Partial<Record<ServiceSlug, string[]>> = {
+  "casting-materials": ["Sandguss-Pumpengeh2.jpeg"],
+};
+
 export const serviceGalleryVariant: Record<ServiceSlug, "projects" | "certificates"> = {
   "casting-materials": "projects",
+  "forging-forming": "projects",
   "weldments-steel-structures": "projects",
   "vehicle-systems": "projects",
   "cnc-machining": "projects",

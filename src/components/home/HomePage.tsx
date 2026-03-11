@@ -173,9 +173,11 @@ export function HomePage({ locale }: HomePageProps) {
           <h2 className="max-w-[20ch] text-3xl font-semibold tracking-tight lg:text-4xl">
             {content.nav.company}
           </h2>
-          <p className="section-muted mt-4 max-w-[62ch] text-base leading-relaxed">
-            {content.company.intro}
-          </p>
+          <div className="section-muted mt-4 max-w-[62ch] space-y-3 text-base leading-relaxed">
+            {content.company.teaser.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <Link
             href={localizePath(locale, "/company")}
             className="mt-6 inline-block text-sm font-medium text-[var(--color-accent)]"

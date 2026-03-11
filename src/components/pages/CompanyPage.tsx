@@ -27,9 +27,11 @@ export function CompanyPage({ locale }: CompanyPageProps) {
         <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight lg:text-5xl">
           {content.company.title}
         </h1>
-        <p className="section-muted mt-5 max-w-[70ch] text-base leading-relaxed">
-          {content.company.intro}
-        </p>
+        <div className="section-muted mt-5 max-w-[74ch] space-y-4 text-base leading-relaxed">
+          {content.company.intro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </section>
 
       <section className="surface-light border-y border-[var(--color-border)] bg-white">
@@ -49,7 +51,7 @@ export function CompanyPage({ locale }: CompanyPageProps) {
               ))}
             </ul>
           </div>
-          <div className="overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-panel)]">
+          <div className="overflow-hidden border border-[var(--color-border)] bg-[var(--color-panel)]">
             <Image
               src={valuesImageSrc}
               alt={valuesImageAltByLocale[locale]}
@@ -91,6 +93,49 @@ export function CompanyPage({ locale }: CompanyPageProps) {
           <p className="mt-4 max-w-[64ch] text-base leading-relaxed text-[var(--color-muted)]">
             {content.company.locationsText}
           </p>
+        </div>
+      </section>
+
+      <section className="surface-dark border-t border-[var(--color-border)]">
+        <div className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
+          <h2 className="text-2xl font-semibold lg:text-3xl">
+            {content.company.whyMagTitle}
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {content.company.whyMagItems.map((item) => (
+              <div
+                key={item}
+                className="border border-[var(--color-border)] bg-white p-5"
+              >
+                <p className="text-sm font-medium leading-relaxed text-[var(--color-text)]">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="surface-light border-y border-[var(--color-border)] bg-white">
+        <div className="mx-auto w-full max-w-7xl px-5 py-14 lg:px-8 lg:py-16">
+          <h2 className="text-2xl font-semibold lg:text-3xl">
+            {content.company.successStoriesTitle}
+          </h2>
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            {content.company.successStories.map((story) => (
+              <article
+                key={story.label}
+                className="border border-[var(--color-border)] bg-[var(--color-panel)] p-5"
+              >
+                <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-text)]">
+                  {story.label}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
+                  {story.text}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </PageFrame>

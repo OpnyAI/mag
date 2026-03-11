@@ -9,6 +9,7 @@ import {
   contentByLocale,
   getServiceBySlug,
   localizePath,
+  serviceGalleryExcludedFiles,
   serviceGalleryFolders,
   serviceGalleryVariant,
 } from "@/lib/site-content";
@@ -24,6 +25,7 @@ function getGalleryImages(slug: ServiceSlug): string[] {
   if (!folderNames || folderNames.length === 0) {
     return [];
   }
+  const excludedFiles = new Set(serviceGalleryExcludedFiles[slug] ?? []);
 
   const allowedExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
@@ -40,8 +42,10 @@ function getGalleryImages(slug: ServiceSlug): string[] {
       return [];
     }
 
-    const fileNames = readdirSync(absoluteFolder).filter((fileName) =>
-      allowedExtensions.has(path.extname(fileName).toLowerCase()),
+    const fileNames = readdirSync(absoluteFolder).filter(
+      (fileName) =>
+        allowedExtensions.has(path.extname(fileName).toLowerCase()) &&
+        !excludedFiles.has(fileName),
     );
 
     fileNames.sort((a, b) => a.localeCompare(b, "de", { numeric: true }));
@@ -90,6 +94,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
 
   const galleryImages = getGalleryImages(service.slug);
   const galleryVariant = serviceGalleryVariant[service.slug];
+  const galleryAltTexts = service.galleryAlts?.map((item) => item[locale]) ?? [];
   const isLogisticsService = service.slug === "logistics-supply-chain";
   const heroImageClass =
     service.slug === "quality-certifications"
@@ -119,7 +124,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
             <div className="relative w-full max-w-[420px] aspect-[4/3] overflow-hidden border border-white/10">
               <Image
                 src="/images/services/logistics/logistics_1.jpeg"
-                alt="Logistics and supply chain coordination"
+                alt={service.heroAlt[locale]}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 420px"
@@ -131,7 +136,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
           <div className="overflow-hidden border border-[var(--color-border)]">
             <Image
               src={service.image}
-              alt={service.title[locale]}
+              alt={service.heroAlt[locale]}
               width={1400}
               height={900}
               className={heroImageClass}
@@ -177,6 +182,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
         locale={locale}
         serviceTitle={service.title[locale]}
         images={galleryImages}
+        altTexts={galleryAltTexts}
         variant={galleryVariant}
       />
 
@@ -189,16 +195,16 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
           <div className="flex flex-wrap gap-3">
             <Link
               href={localizePath(locale, "/contact")}
-              className="rounded-sm bg-[var(--color-text)] px-5 py-3 text-sm font-medium text-white transition hover:bg-[var(--color-accent)] focus-visible:outline-offset-2"
+              className="bg-[var(--color-text)] px-5 py-3 text-sm font-medium text-white transition hover:bg-[var(--color-accent)] focus-visible:outline-offset-2"
             >
               {content.ctaPrimary}
             </Link>
-            <a
-              href="mailto:info@mag-group.eu"
-              className="rounded-sm border border-[var(--color-border)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-text)] focus-visible:outline-offset-2"
+            <Link
+              href={localizePath(locale, "/contact")}
+              className="border border-[var(--color-border)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-text)] focus-visible:outline-offset-2"
             >
               {content.ctaSecondary}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,10 +1,35 @@
 import Image from "next/image";
 import { Locale } from "@/lib/types";
 
+const containModeFilenames = new Set([
+  "schweiss3.jpeg",
+  "shell1.jpg",
+  "Alu-Sandguss.jpg",
+]);
+
+const galleryAltOverrides: Record<string, Record<Locale, string>> = {
+  "schweiss3.jpeg": {
+    de: "Schweißbaugruppe für industrielle Strukturanwendung",
+    en: "Welded assembly for an industrial structural application",
+    fr: "Assemblage soudé pour une application de structure industrielle",
+  },
+  "shell1.jpg": {
+    de: "Shellguss-Bauteil mit komplexer Kontur",
+    en: "Shell-cast component with complex contour",
+    fr: "Composant moulé en coquille à contour complexe",
+  },
+  "Alu-Sandguss.jpg": {
+    de: "Aluminium-Sandgussteil für industrielle Komponentenfertigung",
+    en: "Aluminum sand-cast part for industrial component manufacturing",
+    fr: "Pièce en aluminium moulée en sable pour la fabrication industrielle de composants",
+  },
+};
+
 interface ServiceMediaGalleryProps {
   locale: Locale;
   serviceTitle: string;
   images: string[];
+  altTexts?: string[];
   variant: "projects" | "certificates";
 }
 
@@ -12,6 +37,7 @@ export function ServiceMediaGallery({
   locale,
   serviceTitle,
   images,
+  altTexts = [],
   variant,
 }: ServiceMediaGalleryProps) {
   if (images.length === 0) {
@@ -45,7 +71,7 @@ export function ServiceMediaGallery({
               >
                 <Image
                   src={imagePath}
-                  alt={`${serviceTitle} ${index + 1}`}
+                  alt={altTexts[index] ?? `${serviceTitle} ${index + 1}`}
                   width={1200}
                   height={1600}
                   className="aspect-[3/4] w-full object-contain"
@@ -57,19 +83,32 @@ export function ServiceMediaGallery({
         ) : (
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {images.map((imagePath, index) => (
-              <div
-                key={imagePath}
-                className="overflow-hidden border border-[var(--color-border)] bg-[var(--color-panel)]"
-              >
+              (() => {
+                const fileName = imagePath.split("/").pop() ?? "";
+                const useContainMode = containModeFilenames.has(fileName);
+                const baseAlt = altTexts[index] ?? `${serviceTitle} ${index + 1}`;
+                const altText = galleryAltOverrides[fileName]?.[locale] ?? baseAlt;
+
+                return (
+                  <div
+                    key={imagePath}
+                    className={`overflow-hidden border border-[var(--color-border)] ${
+                      useContainMode ? "bg-white" : "bg-[var(--color-panel)]"
+                    }`}
+                  >
                 <Image
                   src={imagePath}
-                  alt={`${serviceTitle} ${index + 1}`}
+                  alt={altText}
                   width={1400}
                   height={1000}
-                  className="aspect-[4/3] w-full object-cover"
+                  className={`aspect-[4/3] w-full ${
+                    useContainMode ? "object-contain" : "object-cover"
+                  }`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
               </div>
+                );
+              })()
             ))}
           </div>
         )}
