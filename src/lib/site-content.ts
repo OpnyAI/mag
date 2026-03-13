@@ -13,7 +13,7 @@ export const localeBasePath: Record<Locale, string> = {
 export const services: ServiceItem[] = [
   {
     slug: "casting-materials",
-    image: "/images/services/service-1.jpg",
+    image: "/images/services/sandguss/Alu-Sandguss.jpg",
     heroAlt: {
       de: "Industrielle Gusskomponente aus Stahl für hochbelastete Anwendungen",
       en: "Industrial cast steel component for heavy-duty applications",
@@ -807,13 +807,14 @@ export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
   "weldments-steel-structures": ["schweisskonstr"],
   "vehicle-systems": ["fahrzeugbau"],
   "cnc-machining": ["cnc"],
-  "engineering-simulation": [],
+  "engineering-simulation": ["engineering"],
   "logistics-supply-chain": [],
   "quality-certifications": ["certificates"],
 };
 
 export const serviceGalleryExcludedFiles: Partial<Record<ServiceSlug, string[]>> = {
-  "casting-materials": ["Sandguss-Pumpengeh2.jpeg"],
+  "casting-materials": ["Alu-Sandguss.jpg", "Sandguss-Pumpengeh2.jpeg"],
+  "engineering-simulation": ["engineering_1.jpeg"],
 };
 
 export const serviceGalleryVariant: Record<ServiceSlug, "projects" | "certificates"> = {

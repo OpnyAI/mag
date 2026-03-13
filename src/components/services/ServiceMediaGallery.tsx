@@ -2,9 +2,29 @@ import Image from "next/image";
 import { Locale } from "@/lib/types";
 
 const containModeFilenames = new Set([
+  "Sandguss-Chargier.jpg",
+  "Sandguss-Pumpenlüfter.jpg",
   "schweiss3.jpeg",
   "shell1.jpg",
+  "shell2.jpg",
   "Alu-Sandguss.jpg",
+  "cnc_8.jpeg",
+  "cnc_9.jpeg",
+  "schmiede4.jpeg",
+  "schmiede5.jpeg",
+  "schmiede7.jpeg",
+  "schmiede8.jpeg",
+]);
+
+const containModeFolders = new Set([
+  "sandguss",
+  "shellguss",
+  "schmiedteile",
+  "schweisskonstr",
+  "engineering",
+  "cnc",
+  "fahrzeugbau",
+  "logistics",
 ]);
 
 const galleryAltOverrides: Record<string, Record<Locale, string>> = {
@@ -84,8 +104,11 @@ export function ServiceMediaGallery({
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {images.map((imagePath, index) => (
               (() => {
-                const fileName = imagePath.split("/").pop() ?? "";
-                const useContainMode = containModeFilenames.has(fileName);
+                const segments = imagePath.split("/");
+                const fileName = segments.at(-1) ?? "";
+                const folderName = segments.at(-2) ?? "";
+                const useContainMode =
+                  containModeFilenames.has(fileName) || containModeFolders.has(folderName);
                 const baseAlt = altTexts[index] ?? `${serviceTitle} ${index + 1}`;
                 const altText = galleryAltOverrides[fileName]?.[locale] ?? baseAlt;
 
@@ -96,17 +119,28 @@ export function ServiceMediaGallery({
                       useContainMode ? "bg-white" : "bg-[var(--color-panel)]"
                     }`}
                   >
-                <Image
-                  src={imagePath}
-                  alt={altText}
-                  width={1400}
-                  height={1000}
-                  className={`aspect-[4/3] w-full ${
-                    useContainMode ? "object-contain" : "object-cover"
-                  }`}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                />
-              </div>
+                    {useContainMode ? (
+                      <div className="flex aspect-[4/3] w-full items-center justify-center bg-white p-4">
+                        <Image
+                          src={imagePath}
+                          alt={altText}
+                          width={1400}
+                          height={1000}
+                          className="max-h-full max-w-full object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                        />
+                      </div>
+                    ) : (
+                      <Image
+                        src={imagePath}
+                        alt={altText}
+                        width={1400}
+                        height={1000}
+                        className="aspect-[4/3] w-full object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      />
+                    )}
+                  </div>
                 );
               })()
             ))}
