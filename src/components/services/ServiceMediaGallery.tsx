@@ -14,6 +14,12 @@ const containModeFilenames = new Set([
   "schmiede5.jpeg",
   "schmiede7.jpeg",
   "schmiede8.jpeg",
+  "qualitaet_1.jpeg",
+  "qualitaet_2.jpeg",
+  "Penetrationstest-3.jpg",
+  "Ultraschall-Test.jpg",
+  "Penetrationstest-1.jpg",
+  "Penetrationstest-2.jpg",
 ]);
 
 const containModeFolders = new Set([
@@ -51,6 +57,7 @@ interface ServiceMediaGalleryProps {
   images: string[];
   altTexts?: string[];
   variant: "projects" | "certificates";
+  titleOverride?: string;
 }
 
 export function ServiceMediaGallery({
@@ -59,13 +66,15 @@ export function ServiceMediaGallery({
   images,
   altTexts = [],
   variant,
+  titleOverride,
 }: ServiceMediaGalleryProps) {
   if (images.length === 0) {
     return null;
   }
 
   const title =
-    variant === "certificates"
+    titleOverride ??
+    (variant === "certificates"
       ? locale === "de"
         ? "Zertifikate & Nachweise"
         : locale === "en"
@@ -75,7 +84,7 @@ export function ServiceMediaGallery({
         ? "Projektbeispiele"
         : locale === "en"
           ? "Project Examples"
-          : "Exemples de projets";
+          : "Exemples de projets");
 
   return (
     <section className="surface-light border-y border-[var(--color-border)] bg-white">

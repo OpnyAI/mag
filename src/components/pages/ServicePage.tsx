@@ -11,6 +11,7 @@ import {
   localizePath,
   serviceGalleryExcludedFiles,
   serviceGalleryFolders,
+  serviceGallerySections,
   serviceGalleryVariant,
 } from "@/lib/site-content";
 import { Locale, ServiceSlug } from "@/lib/types";
@@ -20,14 +21,26 @@ interface ServicePageProps {
   slug: string;
 }
 
-function getGalleryImages(slug: ServiceSlug): string[] {
-  const folderNames = serviceGalleryFolders[slug];
-  if (!folderNames || folderNames.length === 0) {
+interface GallerySection {
+  images: string[];
+  variant: "projects" | "certificates";
+  title?: string;
+}
+
+function getImagesFromFolders(
+  folderNames: string[],
+  excludedFileNames: string[] = [],
+  includedFileNames?: string[],
+): string[] {
+  if (folderNames.length === 0) {
     return [];
   }
-  const excludedFiles = new Set(serviceGalleryExcludedFiles[slug] ?? []);
-
   const allowedExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+  const excludedFiles = new Set(excludedFileNames);
+  const includeSet = includedFileNames ? new Set(includedFileNames) : null;
+  const includeOrder = includedFileNames
+    ? new Map(includedFileNames.map((fileName, index) => [fileName, index]))
+    : null;
 
   const imagePaths = folderNames.flatMap((folderName) => {
     const absoluteFolder = path.join(
@@ -45,15 +58,52 @@ function getGalleryImages(slug: ServiceSlug): string[] {
     const fileNames = readdirSync(absoluteFolder).filter(
       (fileName) =>
         allowedExtensions.has(path.extname(fileName).toLowerCase()) &&
-        !excludedFiles.has(fileName),
+        !excludedFiles.has(fileName) &&
+        (includeSet === null || includeSet.has(fileName)),
     );
 
-    fileNames.sort((a, b) => a.localeCompare(b, "de", { numeric: true }));
+    if (includeOrder) {
+      fileNames.sort(
+        (a, b) => (includeOrder.get(a) ?? Number.MAX_SAFE_INTEGER) - (includeOrder.get(b) ?? Number.MAX_SAFE_INTEGER),
+      );
+    } else {
+      fileNames.sort((a, b) => a.localeCompare(b, "de", { numeric: true }));
+    }
 
     return fileNames.map((fileName) => `/images/services/${folderName}/${fileName}`);
   });
 
   return Array.from(new Set(imagePaths));
+}
+
+function getGallerySections(locale: Locale, slug: ServiceSlug): GallerySection[] {
+  const configuredSections = serviceGallerySections[slug];
+
+  if (configuredSections && configuredSections.length > 0) {
+    return configuredSections
+      .map((section) => ({
+        images: getImagesFromFolders(
+          section.folders,
+          section.excludedFiles,
+          section.includeFiles,
+        ),
+        variant: section.variant,
+        title: section.title?.[locale],
+      }))
+      .filter((section) => section.images.length > 0);
+  }
+
+  const folderNames = serviceGalleryFolders[slug];
+  if (!folderNames || folderNames.length === 0) {
+    return [];
+  }
+
+  return [
+    {
+      images: getImagesFromFolders(folderNames, serviceGalleryExcludedFiles[slug] ?? []),
+      variant: serviceGalleryVariant[slug],
+    },
+  ].filter((section) => section.images.length > 0);
 }
 
 export function ServicePage({ locale, slug }: ServicePageProps) {
@@ -92,8 +142,7 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
         ? "We support your project from concept development and engineering to serial production and logistics."
         : "Nous accompagnons votre projet de la conception et de l'ingénierie jusqu'à la production série et la logistique.";
 
-  const galleryImages = getGalleryImages(service.slug);
-  const galleryVariant = serviceGalleryVariant[service.slug];
+  const gallerySections = getGallerySections(locale, service.slug);
   const galleryAltTexts = service.galleryAlts?.map((item) => item[locale]) ?? [];
   const isLogisticsService = service.slug === "logistics-supply-chain";
   const heroImageClass =
@@ -178,13 +227,17 @@ export function ServicePage({ locale, slug }: ServicePageProps) {
         </div>
       </section>
 
-      <ServiceMediaGallery
-        locale={locale}
-        serviceTitle={service.title[locale]}
-        images={galleryImages}
-        altTexts={galleryAltTexts}
-        variant={galleryVariant}
-      />
+      {gallerySections.map((section, index) => (
+        <ServiceMediaGallery
+          key={`${service.slug}-${section.variant}-${index}`}
+          locale={locale}
+          serviceTitle={service.title[locale]}
+          images={section.images}
+          altTexts={galleryAltTexts}
+          variant={section.variant}
+          titleOverride={section.title}
+        />
+      ))}
 
       <section className="surface-light border-y border-[var(--color-border)] bg-[var(--color-panel)]">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-4 px-5 py-12 sm:flex-row sm:items-center lg:px-8">

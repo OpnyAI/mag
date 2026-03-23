@@ -1,4 +1,4 @@
-import { Locale, LocaleContent, ServiceItem, ServiceSlug } from "@/lib/types";
+import { Locale, LocaleContent, LocalizedText, ServiceItem, ServiceSlug } from "@/lib/types";
 
 export const email = "info@mag-group.eu";
 export const phone = "+49 176 741 88 448";
@@ -801,6 +801,14 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
 
 export const serviceOrder: ServiceSlug[] = services.map((service) => service.slug);
 
+export interface ServiceGallerySection {
+  folders: string[];
+  variant: "projects" | "certificates";
+  excludedFiles?: string[];
+  includeFiles?: string[];
+  title?: LocalizedText;
+}
+
 export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
   "casting-materials": ["sandguss", "shellguss"],
   "forging-forming": ["schmiedteile"],
@@ -814,6 +822,7 @@ export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
 
 export const serviceGalleryExcludedFiles: Partial<Record<ServiceSlug, string[]>> = {
   "casting-materials": ["Alu-Sandguss.jpg", "Sandguss-Pumpengeh2.jpeg"],
+  "cnc-machining": ["cnc_5.jpeg", "cnc_9.jpeg", "cnc_12.jpeg", "cnc_14.jpeg"],
   "engineering-simulation": ["engineering_1.jpeg"],
 };
 
@@ -826,6 +835,40 @@ export const serviceGalleryVariant: Record<ServiceSlug, "projects" | "certificat
   "engineering-simulation": "projects",
   "logistics-supply-chain": "projects",
   "quality-certifications": "certificates",
+};
+
+export const serviceGallerySections: Partial<Record<ServiceSlug, ServiceGallerySection[]>> = {
+  "quality-certifications": [
+    {
+      folders: ["certificates"],
+      variant: "projects",
+      includeFiles: [
+        "qualitaet_1.jpeg",
+        "qualitaet_2.jpeg",
+        "Penetrationstest-3.jpg",
+        "Ultraschall-Test.jpg",
+        "Penetrationstest-1.jpg",
+        "Penetrationstest-2.jpg",
+      ],
+      title: {
+        de: "Qualitätssicherung & Prüfungen",
+        en: "Quality Assurance & Testing",
+        fr: "Assurance qualité & Contrôles",
+      },
+    },
+    {
+      folders: ["certificates"],
+      variant: "certificates",
+      excludedFiles: [
+        "qualitaet_1.jpeg",
+        "qualitaet_2.jpeg",
+        "Penetrationstest-3.jpg",
+        "Ultraschall-Test.jpg",
+        "Penetrationstest-1.jpg",
+        "Penetrationstest-2.jpg",
+      ],
+    },
+  ],
 };
 
 export function getServiceBySlug(slug: string): ServiceItem | undefined {
