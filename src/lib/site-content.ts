@@ -821,7 +821,7 @@ export const serviceGalleryFolders: Record<ServiceSlug, string[]> = {
 };
 
 export const serviceGalleryExcludedFiles: Partial<Record<ServiceSlug, string[]>> = {
-  "casting-materials": ["Alu-Sandguss.jpg", "Sandguss-Pumpengeh2.jpeg"],
+  "casting-materials": ["Alu-Sandguss.jpg", "Sandguss-Pumpengeh2.jpeg", "ogutucu_1.jpg"],
   "cnc-machining": ["cnc_5.jpeg", "cnc_9.jpeg", "cnc_12.jpeg", "cnc_14.jpeg"],
   "engineering-simulation": ["engineering_1.jpeg"],
 };
