@@ -4,7 +4,7 @@ import { localizePath } from "@/lib/site-content";
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-  "https://www.mag-group.example";
+  "https://www.mag-group.eu";
 
 interface MetadataInput {
   locale: Locale;
