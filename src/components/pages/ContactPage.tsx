@@ -5,6 +5,7 @@ import {
   email,
   localizePath,
   phone,
+  phoneHref,
 } from "@/lib/site-content";
 import { Locale } from "@/lib/types";
 
@@ -39,7 +40,7 @@ export function ContactPage({ locale }: ContactPageProps) {
           </a>
 
           <a
-            href={`tel:${phone.replaceAll(" ", "")}`}
+            href={phoneHref}
             className="border border-[var(--color-border)] bg-white p-5 transition hover:border-[var(--color-accent)]"
           >
             <p className="text-xs uppercase tracking-[0.12em] text-[var(--color-muted)]">
@@ -61,7 +62,7 @@ export function ContactPage({ locale }: ContactPageProps) {
               {content.ctaPrimary}
             </a>
             <a
-              href={`tel:${phone.replaceAll(" ", "")}`}
+              href={phoneHref}
               className="rounded-sm border border-[var(--color-border)] px-5 py-3 text-sm font-medium hover:border-[var(--color-accent)]"
             >
               {content.ctaSecondary}

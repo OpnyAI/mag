@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageFrame } from "@/components/PageFrame";
 import { buildPageMetadata } from "@/lib/seo";
+import { phone } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -38,7 +39,7 @@ export default function Page() {
 
           <section>
             <h2 className="text-lg font-semibold text-[var(--color-text)]">3. Kontakt</h2>
-            <p className="mt-3">Telefon: +49 176 741 88 448</p>
+            <p className="mt-3">Telefon: {phone}</p>
             <p>E-Mail: info@mag-group.eu</p>
           </section>
 

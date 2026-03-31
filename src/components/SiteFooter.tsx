@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { contentByLocale, email, localizePath, phone } from "@/lib/site-content";
+import {
+  contentByLocale,
+  email,
+  localizePath,
+  phone,
+  phoneHref,
+} from "@/lib/site-content";
 import { Locale } from "@/lib/types";
 
 interface SiteFooterProps {
@@ -27,7 +33,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
               {email}
             </a>
             <a
-              href={`tel:${phone.replaceAll(" ", "")}`}
+              href={phoneHref}
               className="block text-[var(--color-on-dark)] hover:text-[var(--color-accent)]"
             >
               {phone}

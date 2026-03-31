@@ -1,7 +1,8 @@
 import { Locale, LocaleContent, LocalizedText, ServiceItem, ServiceSlug } from "@/lib/types";
 
 export const email = "info@mag-group.eu";
-export const phone = "+49 176 741 88 448";
+export const phone = "+49 711 41164615";
+export const phoneHref = "tel:+4971141164615";
 export const companyAddress = "Tränkestraße 1, 70597 Stuttgart";
 
 export const localeBasePath: Record<Locale, string> = {
