@@ -133,7 +133,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 MAG
               </p>
               <p className="text-xs text-[color:rgba(231,235,238,0.72)]">
-                Metal Advancement Group
+                Metall Advancement Group
               </p>
             </div>
           </Link>
@@ -267,7 +267,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 MAG
               </p>
               <p className="hidden truncate text-[11px] text-[color:rgba(231,235,238,0.72)] min-[380px]:block">
-                Metal Advancement Group
+                Metall Advancement Group
               </p>
             </div>
           </Link>

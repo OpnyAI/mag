@@ -446,7 +446,7 @@ export const services: ServiceItem[] = [
 export const contentByLocale: Record<Locale, LocaleContent> = {
   de: {
     localeLabel: "DE",
-    siteName: "MAG - Metal Advancement Group",
+    siteName: "Metall Advancement Group",
     tagline: "ENGINEERING • GIESSEREITECHNOLOGIEN • METALLVERARBEITUNG",
     heroTitle: "Industrieller Metallguss, Engineering und integrierte Metalllösungen",
     heroSubtitle:
@@ -476,13 +476,13 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     company: {
       title: "Über MAG",
       teaser: [
-        "MAG – Metal Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette.",
+        "Metall Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette.",
         "MAG unterstützt internationale Industrieunternehmen von der Konzeptphase bis zur Serienproduktion und Logistik und bündelt dabei über 40 Jahre technisches Know-how aus der Entwicklung von Tiger Lift zu einer leistungsstarken Industrieplattform.",
       ],
       intro: [
-        "MAG – Metal Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette für industrielle Stahlkomponenten und Baugruppen.",
+        "Metall Advancement Group ist ein deutsches Industrieunternehmen mit Sitz in Baden-Württemberg und Fokus auf industrielle Stahl- und Metallverarbeitung. Das Unternehmen verbindet Engineering-Kompetenz, moderne Fertigungstechnologien und internationale Produktionsnetzwerke zu einer integrierten Wertschöpfungskette für industrielle Stahlkomponenten und Baugruppen.",
         "MAG unterstützt internationale Industrieunternehmen von der Konzept- und Engineeringphase über Fertigung und Qualitätssicherung bis zur Serienproduktion und Logistik. Durch die Kombination aus deutscher Entwicklungs- und Projektkompetenz und operativer Fertigungserfahrung in der Türkei bietet MAG effiziente und skalierbare Lösungen für industrielle Anwendungen.",
-        "Die Metal Advancement Group ging aus der in Baden-Württemberg ansässigen Tiger Lift GmbH hervor und baut auf deren Erfahrung in Metallverarbeitung, Stahlkonstruktion und internationaler Industrieproduktion auf. Heute bündelt MAG diese Kompetenzen in einer technologisch orientierten Industrieplattform für anspruchsvolle Stahl- und Metalllösungen.",
+        "Die Metall Advancement Group ging aus der in Baden-Württemberg ansässigen Tiger Lift GmbH hervor und baut auf deren Erfahrung in Metallverarbeitung, Stahlkonstruktion und internationaler Industrieproduktion auf. Heute bündelt MAG diese Kompetenzen in einer technologisch orientierten Industrieplattform für anspruchsvolle Stahl- und Metalllösungen.",
       ],
       valuesTitle: "Leistungsbereiche",
       values: [
@@ -564,7 +564,7 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
   },
   en: {
     localeLabel: "EN",
-    siteName: "MAG - Metal Advancement Group",
+    siteName: "Metall Advancement Group",
     tagline: "Industrial Casting, Engineering & Metal Solutions",
     heroTitle: "Industrial Casting, Engineering and Integrated Metal Solutions",
     heroSubtitle:
@@ -594,13 +594,13 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     company: {
       title: "About MAG",
       teaser: [
-        "MAG – Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into one integrated value chain.",
+        "Metall Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into one integrated value chain.",
         "MAG supports international industrial customers from concept and engineering through serial production and logistics, building on more than 40 years of technical expertise rooted in Tiger Lift's development background.",
       ],
       intro: [
-        "MAG – Metal Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into an integrated value chain for industrial steel components and assemblies.",
+        "Metall Advancement Group is a German industrial company based in Baden-Wuerttemberg with a focus on industrial steel and metal processing. The company combines engineering expertise, modern manufacturing technologies and international production networks into an integrated value chain for industrial steel components and assemblies.",
         "MAG supports international industrial customers from concept and engineering through manufacturing, quality assurance, serial production and logistics. By combining German development and project expertise with operational manufacturing experience in Turkey, MAG delivers efficient and scalable solutions for industrial applications.",
-        "Metal Advancement Group originated from Tiger Lift GmbH, based in Baden-Wuerttemberg, and builds on its experience in metal processing, steel structures and international industrial production. Today, MAG consolidates these competencies in a technology-oriented industrial platform for demanding steel and metal solutions.",
+        "Metall Advancement Group originated from Tiger Lift GmbH, based in Baden-Wuerttemberg, and builds on its experience in metal processing, steel structures and international industrial production. Today, MAG consolidates these competencies in a technology-oriented industrial platform for demanding steel and metal solutions.",
       ],
       valuesTitle: "Core Industrial Capabilities",
       values: [
@@ -682,7 +682,7 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
   },
   fr: {
     localeLabel: "FR",
-    siteName: "MAG - Metal Advancement Group",
+    siteName: "Metall Advancement Group",
     tagline: "Fonderie industrielle, ingénierie et solutions métalliques",
     heroTitle: "Fonderie industrielle, ingénierie et solutions métalliques intégrées",
     heroSubtitle:
@@ -712,13 +712,13 @@ export const contentByLocale: Record<Locale, LocaleContent> = {
     company: {
       title: "À propos de MAG",
       teaser: [
-        "MAG – Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée.",
+        "Metall Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée.",
         "MAG accompagne des industriels internationaux de la phase conceptuelle et d'ingénierie jusqu'à la production en série et la logistique, en s'appuyant sur plus de 40 ans d'expertise technique issue de l'héritage de Tiger Lift.",
       ],
       intro: [
-        "MAG – Metal Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée pour des composants et sous-ensembles industriels en acier.",
+        "Metall Advancement Group est une entreprise industrielle allemande basée dans le Bade-Wurtemberg, spécialisée dans la transformation industrielle de l'acier et du métal. L'entreprise associe expertise d'ingénierie, technologies de fabrication modernes et réseaux de production internationaux au sein d'une chaîne de valeur intégrée pour des composants et sous-ensembles industriels en acier.",
         "MAG accompagne des industriels internationaux depuis la phase de conception et d'ingénierie jusqu'à la fabrication, l'assurance qualité, la production en série et la logistique. En combinant les compétences allemandes en développement et gestion de projet avec une expérience opérationnelle de fabrication en Turquie, MAG propose des solutions efficaces et évolutives pour les applications industrielles.",
-        "Metal Advancement Group est issue de Tiger Lift GmbH, implantée dans le Bade-Wurtemberg, et s'appuie sur son expérience dans la transformation des métaux, les structures en acier et la production industrielle internationale. Aujourd'hui, MAG regroupe ces compétences dans une plateforme industrielle orientée technologie pour des solutions acier et métal exigeantes.",
+        "Metall Advancement Group est issue de Tiger Lift GmbH, implantée dans le Bade-Wurtemberg, et s'appuie sur son expérience dans la transformation des métaux, les structures en acier et la production industrielle internationale. Aujourd'hui, MAG regroupe ces compétences dans une plateforme industrielle orientée technologie pour des solutions acier et métal exigeantes.",
       ],
       valuesTitle: "Domaines de compétences",
       values: [

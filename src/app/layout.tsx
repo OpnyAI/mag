@@ -6,8 +6,8 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MAG - Metal Advancement Group",
-    template: "%s | MAG - Metal Advancement Group",
+    default: "Metall Advancement Group",
+    template: "%s | Metall Advancement Group",
   },
   icons: {
     icon: "/favicon.ico",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "MAG ist ein deutsches Industrieunternehmen für Gießereitechnologien, Metallverarbeitung, Engineering und Supply-Chain-Integration.",
   openGraph: {
     type: "website",
-    siteName: "MAG - Metal Advancement Group",
+    siteName: "Metall Advancement Group",
   },
 };
 

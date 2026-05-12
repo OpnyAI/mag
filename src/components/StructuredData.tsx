@@ -5,7 +5,7 @@ export function StructuredData() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "MAG - Metall Advancement Group GmbH",
+    name: "Metall Advancement Group",
     legalName: "MAG - Metall Advancement Group GmbH",
     url: absoluteUrl("/"),
     logo: absoluteUrl("/images/brand/logo.png"),
